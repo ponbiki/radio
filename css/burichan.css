@@ -40,6 +40,15 @@ background: linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.0
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', endColorstr='#0dc7cad4',GradientType=1 ); /* IE6-9 */
 }
 
+.pic {
+    border: #9988EE solid;
+    border-width: 2px;
+    margin: 10px;
+    padding: 1px;
+    width: 330px;
+    height: 248px;
+}
+
 .logo+hr {
 	display: none;
 }
@@ -80,6 +89,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', e
 	background:#0010E0;
 	color:#FFFFFF;
 	width:100%;
+        font-size: 0.7em;
 }
 .catalogmode {
 	background:#0040E0;
@@ -94,12 +104,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', e
 .postarea {
 	/*background:inherit;*/
 }
-#rules {
-	/*font-size:0.7em;*/
-	width: 468px;
-	font-size: 10px;
-	font-family: sans-serif;
+
+#player {
+    width: 50%;
+    float: left;
+    margin: 20px;
 }
+
+#announcer {
+	/*font-size:0.7em;*/
+	width: 50%;
+	font-size: 16px;
+	font-family: sans-serif;
+        float: right;
+        margin: 20px;
+}
+
 #rules li {
 	margin-left: 1em;
 	/*text-indent: 0em;*/

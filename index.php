@@ -26,22 +26,24 @@
         
     </head>
     <body>
-        
-        <h1>7chan Radio</h1>
-        
-            <div id="pic">
+        <div class="navbar">
+            [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
+            [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
+            [<a href="djPanel.php" title="DJ Panel">DJ Panel</a>]
+        </div>
+        <div class="logo">
+            <h1 title="7chan Radio">7chan Radio</h1>
+        </div>
+        <div class="pic">
 
-                <img src="img/anime_girl_dj.jpg" alt="Weeaboo DJ" title="Weeaboo DJ" width="330" height="248" />
+            <img src="img/anime_girl_dj.jpg" alt="Weeaboo DJ" title="Weeaboo DJ" width="330" height="248" />
 
-            </div>
+        </div>
 
+        <div class="replymode">
             <h2>Now Playing</h2>
-
-                <div id="announcer">
-
-
-                </div>
-
+        </div>
+        <div id="player">
                 <script type="text/javascript">
                         MRP.insert({
                             'url': 'http://radio.7chan.org:8000/radio',
@@ -57,6 +59,11 @@
                         });
                 </script>
                 <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+        <div id="announcer">
+
+
+        </div>
+
 
         <?php
         // put your code here
