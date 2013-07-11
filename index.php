@@ -43,27 +43,28 @@
         <div class="replymode">
             <h2>Now Playing</h2>
         </div>
-        <div id="player">
-                <script type="text/javascript">
-                        MRP.insert({
-                            'url': 'http://radio.7chan.org:8000/radio',
-                            'codec': 'ogg',
-                            'volume': 100,
-                            'autoplay': false,
-                            'buffering': 5,
-                            'title': '7chan%20Radio',
-                            'bgcolor': '#FFFFFF',
-                            'skin': 'mcclean',
-                            'width': 180,
-                            'height': 60
-                        });
-                </script>
-                <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
-        <div id="announcer">
+        <div class="playing">
+            <div id="player">
+                    <script type="text/javascript">
+                            MRP.insert({
+                                'url': 'http://radio.7chan.org:8000/radio',
+                                'codec': 'ogg',
+                                'volume': 100,
+                                'autoplay': false,
+                                'buffering': 5,
+                                'title': '7chan%20Radio',
+                                'bgcolor': '#FFFFFF',
+                                'skin': 'mcclean',
+                                'width': 180,
+                                'height': 60
+                            });
+                    </script>
+                    <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+            <div id="announcer">
 
 
+            </div>
         </div>
-
 
         <?php
         // put your code here
