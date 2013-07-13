@@ -1,5 +1,5 @@
 <?php
-require_once 'functions.php';
+require 'functions.php';
 session_start();
 
 if (isset($_SESSION['dj'])) {
@@ -11,6 +11,5 @@ if ($loggedin)
     $welcome = "$dj logged in";
     else
         $welcome = '';
-    
-return $welcome;
+
 ?>

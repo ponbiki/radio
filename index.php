@@ -1,6 +1,6 @@
 <?php
-require_once 'header.php';
-require_once 'codec.php';
+require 'header.php';
+require 'codec.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,23 +53,19 @@ require_once 'codec.php';
         </div>
         <div id="playing">
             <div id="player">
-                    <script type="text/javascript">
-                            MRP.insert({
-                                'url': 'http://radio.7chan.org:8000/radio',
-                                'codec': '<?php echo $codec; ?>',
-                                'volume': 100,
-                                'autoplay': false,
-                                'buffering': 5,
-                                'title': '7chan%20Radio',
-                                'bgcolor': '#EEF2FF',
-                                'skin': 'mcclean',
-                                'width': 180,
-                                'height': 60
-                            });
-            
-            
-            
-            
+                <script type="text/javascript">
+                MRP.insert({
+                    'url': 'http://radio.7chan.org:8000/radio',
+                    'codec': <?php echo "'$codec'" ?>,
+                    'volume': 100,
+                    'autoplay': false,
+                    'buffering': 5,
+                    'title': '7chan%20Radio',
+                    'bgcolor': '#EEF2FF',
+                    'skin': 'mcclean',
+                    'width': 180,
+                    'height': 60
+                });
                 </script>
             </div>
             <div id="announcer">

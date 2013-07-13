@@ -1,7 +1,7 @@
 <?php
 $dbhost = 'localhost';
 $dbname = 'radio';
-$dbuser = '7chan_radio';
+$dbuser = 'radio';
 $dbpass = 'password';
 
 function queryMysql($query) {

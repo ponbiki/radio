@@ -16,6 +16,16 @@ function findRadio($arr) {
     return $j;
 }
 
+function findCodec($arr) {
+       
+    if (($arr['mountpoint'][$rad]['streamurl'] == 'MP3') || ($arr['mountpoint']['streamurl'] == 'MP3')) {
+        $j = 'mp3';
+    } else {
+        $j = 'ogg';
+    }
+    return $j;
+}
+
 function objectsIntoArray($arrObjData, $arrSkipIndices = array()) {
     $arrData = array();
 
