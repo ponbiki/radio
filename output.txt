@@ -1,6 +1,6 @@
 Array
 (
-    [client] => 793424
+    [client] => 793567
     [source] => Array
         (
         )
@@ -29,7 +29,7 @@ Array
                 (
                     [@attributes] => Array
                         (
-                            [id] => /ponbiki
+                            [id] => /radio
                         )
 
                     [name] => ponbiki
@@ -39,7 +39,7 @@ Array
                     [streamurl] => MP3
                     [listeners] => 0
                     [peaklisteners] => 0
-                    [streamstarttime] => Sat, 13 Jul 2013 00:32:45 -0400
+                    [streamstarttime] => Sat, 13 Jul 2013 01:00:00 -0400
                 )
 
         )
