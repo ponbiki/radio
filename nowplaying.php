@@ -5,6 +5,9 @@ $distObj = simplexml_load_string($distStr);
 $arrXml = objectsIntoArray($distObj);
 $rad = findRadio($arrXml);
 
+if ($arr['mountpoint'][$rad]['streamurl'] == 'MP3')
+    echo "FUCK";
+
 function findRadio($arr) {
     for ($j = 0; $j < 6; $j++) {
         if ($arr['mountpoint'][$j]['@attributes']['id'] == '/radio') {

@@ -1,5 +1,4 @@
-<?php
+<?php 
 require 'nowplaying.php';
-
-$codec = findCodec($arrXml);
+$codec = findCodec($GLOBALS['arrXml']);
 ?>
