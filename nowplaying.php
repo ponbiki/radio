@@ -17,6 +17,8 @@ function findRadio($arr) {
 }
 
 function findCodec($arr) {
+    
+    global $rad;
        
     if (($arr['mountpoint'][$rad]['streamurl'] == 'MP3') || ($arr['mountpoint']['streamurl'] == 'MP3')) {
         $j = 'mp3';
