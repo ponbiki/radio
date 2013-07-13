@@ -1,3 +1,7 @@
+<?php
+require_once 'header.php';
+require_once 'codec.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +22,7 @@
             $(document).ready(function() {
                 $.ajaxSetup({cache: false}); // This part addresses an IE bug. without it, IE will only load the first number and will never refresh
                 setInterval(function() {
-                    $('#announcer').load('nowplaying.php');
+                    $('#announcer').load('announce.php');
                 }, 3000); // the "3000" here refers to the time to refresh the div. it is in milliseconds.
             });
             // ]]>
@@ -30,6 +34,10 @@
             [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
             [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
             [<a href="djPanel.php" title="DJ Panel">DJ Panel</a>]
+            <?php
+            if ($welcome != '')
+                echo " [$welcome]";
+            ?>
         </div>
         <div class="logo">
             <h1 title="7chan Radio">7chan Radio</h1>
@@ -43,23 +51,27 @@
         <div class="replymode">
             <h2>Now Playing</h2>
         </div>
-        <div class="playing">
+        <div id="playing">
             <div id="player">
                     <script type="text/javascript">
                             MRP.insert({
                                 'url': 'http://radio.7chan.org:8000/radio',
-                                'codec': 'ogg',
+                                'codec': '<?php echo $codec; ?>',
                                 'volume': 100,
                                 'autoplay': false,
                                 'buffering': 5,
                                 'title': '7chan%20Radio',
-                                'bgcolor': '#FFFFFF',
+                                'bgcolor': '#EEF2FF',
                                 'skin': 'mcclean',
                                 'width': 180,
                                 'height': 60
                             });
-                    </script>
-                    <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+            
+            
+            
+            
+                </script>
+            </div>
             <div id="announcer">
 
 

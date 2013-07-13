@@ -5,17 +5,6 @@ $distObj = simplexml_load_string($distStr);
 $arrXml = objectsIntoArray($distObj);
 $rad = findRadio($arrXml);
 
-if ($arrXml['mountpoint']['@attributes']['id'] == '/radio') {
-    echo "DJ: ". $arrXml['mountpoint']['name'] ."<br />";
-    echo "Now Playing: ". $arrXml['mountpoint']['playing'] ."<br />";
-    echo "Listeners: ". $arrXml['mountpoint']['listeners'] ."<br />";
-} elseif ($arrXml['mountpoint'][$rad]['@attributes']['id'] == '/radio') {
-       echo "DJ: ". $arrXml['mountpoint'][$rad]['name'] ."<br />";
-        echo "Now Playing: ". $arrXml['mountpoint'][$rad]['playing'] ."<br />";
-        echo "Listeners: ". $arrXml['mountpoint'][$rad]['listeners'] ."<br />";
-} else echo "OFF AIR";
-        
-
 function findRadio($arr) {
     for ($j = 0; $j < 6; $j++) {
         if ($arr['mountpoint'][$j]['@attributes']['id'] == '/radio') {
