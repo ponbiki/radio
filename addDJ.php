@@ -1,5 +1,5 @@
 <?php
-require_once 'header.php';
+require 'header.php';
 
 // if ($loggedin = FALSE)   finish securing page
 ?>
@@ -63,7 +63,7 @@ require_once 'header.php';
         if (isset($_POST['user'])) {
             $user = sanitizeString($_POST['user']);
             $pass = sanitizeString($_POST['pass']);
-            $token = sha1("salt1$pass$salt2");
+            $token = md5("salt1$pass$salt2");
             
             
             if ($user == "" || $pass == "") {
@@ -74,7 +74,7 @@ require_once 'header.php';
                 if (mysql_num_rows(queryMysql($query))) {
                     $error = "That username already exists<br /><br />";
                 } else {
-                    $query = "INSERT INTO radio VALUES('$user', 'token')";
+                    $query = "INSERT INTO radio VALUES('$user', '$token')";
                     queryMysql($query);
                 }
                 die("<h4>Account created for $user</h4>");
