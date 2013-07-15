@@ -1,7 +1,7 @@
 <?php
 require 'header.php';
 
-// if ($loggedin = FALSE)   finish securing page
+if (!$loggedin) header("Location: index.php");
 ?>
 <!DOCTYPE html>
 <html>

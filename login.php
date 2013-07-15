@@ -11,13 +11,24 @@
     </head>
     <body>
         <?php
-        require_once 'header.php';
-        
+        require 'header.php';
+        ?>
+        <div class="navbar">
+            [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
+            [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
+            [<a href=<?php if (!$loggedin)
+                echo "'login.php' title='Login'>DJ Panel";
+                else echo "'djpanel.php' title='DJ Panel'>DJ Panel</a> / <a href='logout.php' title='Logout'>Logout"; ?></a>]
+        </div>
+        <div class="logo">
+            <h1 title="7chan Radio">7chan Radio</h1>
+        </div>
+        <?php
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
 
-        echo "<h3>DJ Log In</h3>";
-        $error = $user = '';
+        echo "<div class='replymode'><h2>DJ Log In</h2></div>";
+        $error = $user = $pass = '';
         
         if (isset($_POST['user'])) {
             $user = sanitizeString($_POST['user']);
@@ -35,7 +46,7 @@
                 } else {
                     $_SESSION['user'] = $user;
                     $_SESSION['pass'] = $token;
-                    die(header("Location: index.php"));
+                    die(header("Location: djpanel.php"));
                 }
             }
         }
