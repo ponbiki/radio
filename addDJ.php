@@ -82,10 +82,10 @@ require 'header.php';
         }
         ?>
         <form method='post' action='addDJ.php'><?php $error ?>
-            Username <input type='text' maxlength='24' name='user' value='<? $user ?>'
+            Username <input type='text' maxlength='24' name='user' value="<? $user ?>"
                             onBLur='checkUser(this)'/><span id='info'></span><br />
             Password &nbsp;<input type='password' maxlength='24' name='pass'
-                            value='<?php $pass ?>' /><br />
+                            value="<?php $pass ?>" /><br />
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <input type='submit' value='Add DJ' />
         </form>

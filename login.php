@@ -13,9 +13,13 @@
         <?php
         require_once 'header.php';
         
+        $salt1 = "qm&h*";
+        $salt2 = "pg!@";
+
         echo "<h3>DJ Log In</h3>";
         $error = $user = $pass = '';
-        
+        $token = md5("$salt1$pass$salt2");        
+
         if (isset($_POST['user'])) {
             $user = sanitizeString($_POST['user']);
             $pass = sanitizeString($_POST['pass']);
@@ -24,23 +28,25 @@
                 $error = "Not all fields were entered<br />";
             } else {
                 $query = "SELECT username,password FROM djs
-                    WHERE username='$user' AND password='$pass'";
+                    WHERE username='$user' AND password='$token'";
                 
                 if (mysql_num_rows(queryMysql($query)) == 0) {
                     $error = "Username/Password invalid<br />";
                 } else {
                     $_SESSION['user'] = $user;
-                    $_SESSION['pass'] = $pass;
+                    $_SESSION['pass'] = $token;
                     die("Righteous");
                 }
             }
         }
-        ?>
-        <form method='post' action='login.php'><?php $error ?>
-            Username <input type='text' maxlength='24' name='user' value="<?php $user ?>" /><br />
-            Password &nbsp;<input type='password' maxlength='24' name='pass' value="<?php $pass ?>" /><br />
+echo <<<_END
+        <form method='post' action='login.php'>$error
+            Username <input type='text' maxlength='24' name='user' value="$user" /><br />
+            Password &nbsp;<input type='password' maxlength='24' name='pass' value="$pass" /><br />
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <input type="submit" value="Login" />
         </form>
+_END;
+?>
     </body>
 </html>
