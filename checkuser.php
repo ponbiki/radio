@@ -3,7 +3,7 @@ require 'functions.php';
 
 if (isset($_POST['user'])) {
     $user = sanitizeString($_POST['user']);
-    $query = "SELECT * FROM radio WHERE username='$user'";
+    $query = "SELECT * FROM djs WHERE username='$user'";
     
     if (mysql_num_rows(queryMysql($query)))
         echo "<font color=red>&nbsp;&larr;
