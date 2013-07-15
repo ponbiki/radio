@@ -2,13 +2,13 @@
 require 'functions.php';
 session_start();
 
-if (isset($_SESSION['dj'])) {
-    $dj = $_SESSION['dj'];
+if (isset($_SESSION['user'])) {
+    $user = $_SESSION['user'];
     $loggedin = TRUE;
 } else $loggedin = FALSE;
 
 if ($loggedin)
-    $welcome = "$dj logged in";
+    $welcome = "$user logged in";
     else
         $welcome = '';
 

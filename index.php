@@ -33,11 +33,9 @@ require 'codec.php';
         <div class="navbar">
             [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
             [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
-            [<a href="djPanel.php" title="DJ Panel">DJ Panel</a>]
-            <?php
-            if ($welcome != '')
-                echo " [$welcome]";
-            ?>
+            [<a href=<?php if (!$loggedin)
+                echo "'login.php' title='Login'>DJ Panel";
+                else echo "'djpanel.php' title='DJ Panel'>DJ Panel"; ?></a>]
         </div>
         <div class="logo">
             <h1 title="7chan Radio">7chan Radio</h1>
@@ -68,14 +66,8 @@ require 'codec.php';
                 });
                 </script>
             </div>
-            <div id="announcer">
-
-
+            <div id="announcer" >
             </div>
         </div>
-
-        <?php
-        // put your code here
-        ?>
     </body>
 </html>

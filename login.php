@@ -17,9 +17,8 @@
         $salt2 = "pg!@";
 
         echo "<h3>DJ Log In</h3>";
-        $error = $user = $pass = '';
-        $token = md5("$salt1$pass$salt2");        
-
+        $error = $user = '';
+        
         if (isset($_POST['user'])) {
             $user = sanitizeString($_POST['user']);
             $pass = sanitizeString($_POST['pass']);
@@ -27,6 +26,7 @@
             if ($user == "" || $pass == "") {
                 $error = "Not all fields were entered<br />";
             } else {
+                $token = md5("$salt1$pass$salt2");
                 $query = "SELECT username,password FROM djs
                     WHERE username='$user' AND password='$token'";
                 
@@ -35,7 +35,7 @@
                 } else {
                     $_SESSION['user'] = $user;
                     $_SESSION['pass'] = $token;
-                    die("Righteous");
+                    die(header("Location: index.php"));
                 }
             }
         }
