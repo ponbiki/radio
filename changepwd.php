@@ -37,7 +37,7 @@ if (!$loggedin) header("Location: index.php");
             $token = md5("$salt1$pass1$salt2");
             
             if (($pass1 == "" || $pass2 == "") || ($pass1 != $pass2))
-                $error = "Not all fileds were entered, or the password do not match.  Please try again.";
+                $error = "Not all fields were entered, or the password do not match.  Please try again.";
             } else {
             $query = "UPDATE djs SET password='$token' WHERE username='$user'";
             queryMysql($query);
