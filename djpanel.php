@@ -33,9 +33,8 @@ if (!$loggedin) header("Location: index.php");
         <p><span id="welcome">Welcome, <?php echo $user; ?>.</span></p>
         <div class="dj">
             <ul>
-                <li>
-                    <a href="addDJ.php" title="Add DJ">Add New DJ</a>
-                </li>
+                <li><a href="addDJ.php" title="Add DJ">Add New DJ</a></li>
+                <li><a href="changepwd.php" title="Change Password">Change Password</a></li>
             </ul>
         </div>
 </html>

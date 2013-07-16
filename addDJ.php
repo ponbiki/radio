@@ -46,11 +46,7 @@ if (!$loggedin) header("Location: index.php");
         <div class="navbar">
             [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
             [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
-            [<a href="djPanel.php" title="DJ Panel">DJ Panel</a>]
-            <?php
-            if ($welcome != '')
-                echo " [$welcome]";
-            ?>
+            [<a href='djpanel.php' title='DJ Panel'>DJ Panel</a> / <a href='logout.php' title='Logout'>Logout</a>]
         </div>
         <div class="logo">
             <h1 title="7chan Radio">7chan Radio</h1>
@@ -81,6 +77,9 @@ if (!$loggedin) header("Location: index.php");
             }
         }
         ?>
+        <div class="replymode">
+            <h2>Add DJ</h2>
+        </div>
         <form method='post' action='addDJ.php'><?php $error ?>
             Username <input type='text' maxlength='24' name='user' value="<? $user ?>"
                             onBLur='checkUser(this)'/><span id='info'></span><br />
