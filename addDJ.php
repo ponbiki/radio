@@ -80,11 +80,11 @@ if (!$loggedin) header("Location: index.php");
         <div class="replymode">
             <h2>Add DJ</h2>
         </div>
-        <form method='post' action='addDJ.php'><?php $error ?>
-            Username <input type='text' maxlength='24' name='user' value="<? $user ?>"
+        <form method='post' action='addDJ.php'><?php echo $error; ?>
+            Username <input type='text' maxlength='24' name='user' value="<?php echo $user; ?>"
                             onBLur='checkUser(this)'/><span id='info'></span><br />
             Password &nbsp;<input type='password' maxlength='24' name='pass'
-                            value="<?php $pass ?>" /><br />
+                            value="<?php echo $pass; ?>" /><br />
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <input type='submit' value='Add DJ' />
         </form>
