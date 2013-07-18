@@ -10,13 +10,13 @@ if (!$loggedin) header("Location: index.php");
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>DJ Panel</title>
-        
+
         <meta name="robots" content="noindex, nofollow" />
-        
+
         <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-        
+
         <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-        
+
     </head>
     <body>
         <div class="navbar">
@@ -37,4 +37,16 @@ if (!$loggedin) header("Location: index.php");
                 <li><a href="changepwd.php" title="Change Password">Change Password</a></li>
             </ul>
         </div>
+        <table>
+            <tr><th>DJs</th></tr>
+            <?php
+            $query = "SELECT * FROM djs";
+            $result = mysql_query($query);
+            $rows = mysql_num_rows($result);
+
+            for ($j = 0; $j < $rows; ++$j) {
+                echo "<tr><td>" . mysql_result($result,$j,'username') . "</td></tr>";
+            }
+            ?>
+        </table>
 </html>

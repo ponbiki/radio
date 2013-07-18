@@ -172,3 +172,12 @@ ol, li {
 .dj {
     font-size: 12pt;
 }
+
+table {
+    float: right;
+    padding: 15px;
+    color: #4F5260;
+    text-align: center;
+    border: 1px solid #C5C8D2;
+    background-color: #D6DFF0;
+}
