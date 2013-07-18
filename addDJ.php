@@ -72,8 +72,8 @@ if (!$loggedin) header("Location: index.php");
                 } else {
                     $query = "INSERT INTO djs VALUES('$user', '$token')";
                     queryMysql($query);
-                }
-                die("<h4>Account created for $user</h4>");
+                    die("<h4>Account created for $user</h4>");
+                }                
             }
         }
         ?>
