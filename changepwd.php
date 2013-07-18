@@ -46,15 +46,13 @@ if (!$loggedin) header("Location: index.php");
         ?>
 
         <div class="replymode">
-            
             <h2>Change Password</h2>
         </div>
         <p><span id="welcome">Welcome, <?php echo $user; ?>.</span></p>
         <p>Please input your new password twice</p>
-        <form method='post' action='changepwd.php'><?php $error ?>
-            Password <input type='password' maxlength='24' name='pass1' value="<?php echo $pass1; ?>"
-                            onBLur='checkUser(this)'/><span id='info'></span><br />
-            Password <input type='password' maxlength='24' name='pass2' value="<?php echo $pass2; ?>" /><br />
+        <form method='post' action='changepwd.php'><?php echo $error; ?>
+            Password <input type='password' maxlength='24' name='pass1' value="<?php $pass1; ?>" /><br />
+            Password <input type='password' maxlength='24' name='pass2' value="<?php $pass2; ?>" /><br />
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <input type='submit' value='Change' />
         </form>
