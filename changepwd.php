@@ -31,18 +31,19 @@ if (!$loggedin) header("Location: index.php");
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
         
-        if (isset($_POST[pass1])) {
+        if (isset($_POST['pass1'])) {
             $pass1 = sanitizeString($_POST['pass1']);
             $pass2 = sanitizeString($_POST['pass2']);
             $token = md5("$salt1$pass1$salt2");
             
-            if (($pass1 == "" || $pass2 == "") || ($pass1 != $pass2))
-                $error = "Not all fields were entered, or the password do not match.  Please try again.";
+            if (($pass1 == "" || $pass2 == "") || ($pass1 != $pass2)) {
+                $error = "Not all fields were entered, or the password do not match.  Please try again.<br /><br />";
             } else {
-            $query = "UPDATE djs SET password='$token' WHERE username='$user'";
-            queryMysql($query);
-            die("<h4>Password for $user changed</h4>");
-            }
+                $query = "UPDATE djs SET password='$token' WHERE username='$user'";
+                queryMysql($query);
+                die("<h4>Password for $user changed</h4><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
+                }
+        }
         ?>
 
         <div class="replymode">
