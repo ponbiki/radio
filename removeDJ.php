@@ -31,7 +31,7 @@ if (!$loggedin) header("Location: index.php");
         $query1 = "SELECT * FROM djs";
         $result1 = queryMysql($query1);
 
-        /*if (isset($_POST['user'])) {
+        if (isset($_POST['user'])) {
         $user = sanitizeString($_POST['user']);
 
         if (!isset($_POST['confirm'])) {
@@ -40,8 +40,8 @@ if (!$loggedin) header("Location: index.php");
                 $query2 = "DELETE FROM djs WHERE username='$user'";
                 queryMysql($query2);
                 die("<h4>$user has been removed</h4><br /><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
-            }*/
-
+            }
+        }
 
         ?>
         <div class="replymode">
