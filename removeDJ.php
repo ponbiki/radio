@@ -29,25 +29,45 @@ if (!$loggedin) header("Location: index.php");
         $error = $user = $pass = "";
 
         $query1 = "SELECT * FROM djs";
-        $result1 = mysql_query($query1);
-        /*$rows1 = mysql_num_rows($result1);
+        $result1 = queryMysql($query1);
 
-        for ($j = 0; $j < $rows1; ++$j) {
-            "<option value=" . mysql_result($result1,$j,'username') . ">" . mysql_result($result1,$j,'username') . "</option>";
-        }*/
+        /*if (isset($_POST['user'])) {
+        $user = sanitizeString($_POST['user']);
+
+        if (!isset($_POST['confirm'])) {
+            $error = "Please check and confirm your selection before deleting<br />";
+        } else {
+                $query2 = "DELETE FROM djs WHERE username='$user'";
+                queryMysql($query2);
+                die("<h4>$user has been removed</h4><br /><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
+            }*/
+
+
         ?>
         <div class="replymode">
             <h2>Remove DJ</h2>
         </div>
         <form method='post' action='removeDJ.php'><?php echo $error; ?>
-            DJ &nbsp; &nbsp;<select name='DJ' size='1'>
+            DJ &nbsp; &nbsp;<select name='user' size='1'>
                 <?php while($row = mysql_fetch_array($result1)) {
                     echo "<option value='" . $row[username] . "'>" . $row[username] . "</option>";
                 } ?>
             </select><br /><br />
             <label>Confirm Selection &nbsp; <input type="checkbox" name="confirm"></label><br />
-            &nbsp; &nbsp;
-            <input type='submit' value='Remove DJ' />
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type='submit' value='Remove' />
         </form>
+        <table>
+            <tr><th>DJs</th></tr>
+            <?php
+            $query = "SELECT * FROM djs";
+            $result = mysql_query($query);
+            $rows = mysql_num_rows($result);
+
+            for ($j = 0; $j < $rows; ++$j) {
+                echo "<tr><td>" . mysql_result($result,$j,'username') . "</td></tr>";
+            }
+            ?>
+        </table>
     </body>
 </html>
