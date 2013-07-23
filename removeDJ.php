@@ -52,8 +52,8 @@ if (!$loggedin) header("Location: index.php");
                 <?php while($row = mysql_fetch_array($result1)) {
                     echo "<option value='" . $row[username] . "'>" . $row[username] . "</option>";
                 } ?>
-            </select><br /><br />
-            <label>Confirm Selection &nbsp; <input type="checkbox" name="confirm"></label><br />
+            </select><br />
+            <label>Confirm Selection &nbsp; &nbsp; &nbsp; <input type="checkbox" name="confirm"></label><br /><br />
             &nbsp; &nbsp; &nbsp; &nbsp;
             <input type='submit' value='Remove' />
         </form>

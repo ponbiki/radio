@@ -52,7 +52,7 @@ if (!$loggedin) header("Location: index.php");
             <h1 title="7chan Radio">7chan Radio</h1>
         </div>
         <?php
-        $error = $user = $pass = "";
+        $error = $user = $pass = $admin = "";
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
 
@@ -61,21 +61,24 @@ if (!$loggedin) header("Location: index.php");
             $pass = sanitizeString($_POST['pass']);
             $token = md5("$salt1$pass$salt2");
 
+            if (isset($_POST['admin']))
+                $admin = "Y";
+                    else $admin = "N";
 
-            if ($user == "" || $pass == "") {
-                $error = "Not all fields were entered<br /><br />";
-            } else {
-                $query = "SELECT * FROM djs WHERE username='$user'";
-
-                if (mysql_num_rows(queryMysql($query))) {
-                    $error = "That username already exists<br /><br />";
+                if ($user == "" || $pass == "") {
+                    $error = "Not all fields were entered<br /><br />";
                 } else {
-                    $query = "INSERT INTO djs VALUES('$user', '$token')";
-                    queryMysql($query);
-                    die("<h4>Account created for $user</h4><br /><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
+                    $query = "SELECT * FROM djs WHERE username='$user'";
+
+                    if (mysql_num_rows(queryMysql($query))) {
+                        $error = "That username already exists<br /><br />";
+                    } else {
+                        $query = "INSERT INTO djs VALUES('$user', '$token', '$admin')";
+                        queryMysql($query);
+                        die("<h4>Account created for $user</h4><br /><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
+                    }
                 }
             }
-        }
         ?>
         <div class="replymode">
             <h2>Add DJ</h2>
@@ -85,6 +88,7 @@ if (!$loggedin) header("Location: index.php");
                             onBLur='checkUser(this)'/><span id='info'></span><br />
             Password &nbsp;<input type='password' maxlength='24' name='pass'
                             value="<?php $pass; ?>" /><br />
+            <label>Make Administrator &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="checkbox" name="admin"></label><br /><br />
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <input type='submit' value='Add DJ' />
         </form>
