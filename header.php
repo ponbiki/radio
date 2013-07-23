@@ -7,9 +7,4 @@ if (isset($_SESSION['user'])) {
     $loggedin = TRUE;
 } else $loggedin = FALSE;
 
-if ($loggedin)
-    $welcome = "$user logged in";
-    else
-        $welcome = '';
-
 ?>
