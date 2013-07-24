@@ -41,7 +41,11 @@ if (!$loggedin) header("Location: index.php");
             $rows = mysql_num_rows($result);
 
             for ($j = 0; $j < $rows; ++$j) {
-                echo "<tr><td>" . mysql_result($result,$j,'username') . "</td></tr>";
+                if (mysql_result($result,$j,'admin') == "Y") {
+                    echo "<tr><td><span style='color:#AF0A0F;'>" . mysql_result($result,$j,'username') . "</span></td></tr>";
+                } else {
+                    echo "<tr><td>" . mysql_result($result,$j,'username') . "</td></tr>";
+                }
             }
             ?>
         </table>
