@@ -31,6 +31,7 @@ if (!$loggedin) header("Location: index.php");
                     echo "<li><a href='addDJ.php' title='Add DJ'>Add New DJ</a></li>
                         <li><a href='removeDJ.php' title='Remove DJ'>Remove DJ</a></li>"; ?>
                     <li><a href='changepwd.php' title='Change Password'>Change Password</a></li>
+                    <li><a href='djprofile.php' title='DJ Profile'>DJ Profile</a></li>
             </ul>
         </div>
         <table>

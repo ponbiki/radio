@@ -21,6 +21,6 @@ if (!$loggedin) header("Location: index.php");
 
 
         <div class="replymode">
-            <h2>Change Password</h2>
+            <h2>DJ Profile</h2>
         </div>
     </body>
