@@ -12,4 +12,18 @@ if (isset($_SESSION['admin'])) {
 } else {
     $admin = FALSE;
 }
+
+if ($loggedin)
+    $navigation = "<div class='navbar'>
+                [<a href='index.php' title='7chan Radio'>7chan Radio</a> / <a href='schedule.php' title='Schedule'>Schedule</a>]
+                [<a href='https://7chan.org/ch7/' title='Channel 7'>ch7</a> / <a href='https://7chan.org' title='7chan'>7chan</a>]
+                [<a href='djpanel.php' title='DJ Panel'>DJ Panel</a> / <a href='logout.php' title='Logout'>Logout</a>]
+                </div>";
+    else
+        $navigation = "<div class='navbar'>
+            [<a href='index.php' title='7chan Radio'>7chan Radio</a> / <a href='schedule.php' title='Schedule'>Schedule</a>]
+            [<a href='https://7chan.org/ch7/' title='Channel 7'>ch7</a> / <a href='https://7chan.org' title='7chan'>7chan</a>]
+            [<a href='login.php' title='DJ Panel'>DJ Panel</a>]
+            </div>";
+
 ?>

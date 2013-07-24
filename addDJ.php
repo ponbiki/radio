@@ -4,7 +4,6 @@ require 'header.php';
 if (!$loggedin) header("Location: index.php");
 
 if (!$admin) header("Location: djpanel.php");
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,11 +45,7 @@ if (!$admin) header("Location: djpanel.php");
         </script>
     </head>
     <body>
-        <div class="navbar">
-            [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
-            [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
-            [<a href='djpanel.php' title='DJ Panel'>DJ Panel</a> / <a href='logout.php' title='Logout'>Logout</a>]
-        </div>
+        <?php echo $navigation; ?>
         <div class="logo">
             <h1 title="7chan Radio">7chan Radio</h1>
         </div>

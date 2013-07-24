@@ -1,5 +1,6 @@
 <?php
 require 'header.php';
+
 require 'codec.php';
 ?>
 <!DOCTYPE html>
@@ -7,17 +8,17 @@ require 'codec.php';
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>7chan Radio</title>
-        
+
         <meta name="robots" content="noindex, nofollow" />
-        
+
         <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-        
+
         <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-        
+
         <script type="text/javascript" src="http://hosted.musesradioplayer.com/mrp.js"></script>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        
+
         <script type="text/javascript">// <![CDATA[
             $(document).ready(function() {
                 $.ajaxSetup({cache: false}); // This part addresses an IE bug. without it, IE will only load the first number and will never refresh
@@ -26,17 +27,11 @@ require 'codec.php';
                 }, 3000); // the "3000" here refers to the time to refresh the div. it is in milliseconds.
             });
             // ]]>
-        </script>        
-        
+        </script>
+
     </head>
     <body>
-        <div class="navbar">
-            [<a href="index.php" title="7chan Radio">7chan Radio</a> / <a href="schedule.php" title="Schedule">Schedule</a>]
-            [<a href="https://7chan.org/ch7/" title="Channel 7">ch7</a> / <a href="https://7chan.org" title="7chan">7chan</a>]
-            [<a href=<?php if (!$loggedin)
-                echo "'login.php' title='Login'>DJ Panel";
-                else echo "'djpanel.php' title='DJ Panel'>DJ Panel</a> / <a href='logout.php' title='Logout'>Logout"; ?></a>]
-        </div>
+        <?php echo $navigation; ?>
         <div class="logo">
             <h1 title="7chan Radio">7chan Radio</h1>
         </div>
