@@ -14,11 +14,7 @@ require 'header.php';
         <link rel="stylesheet" href="css/burichan.css" type="text/css" />
     </head>
     <body>
-        <?php echo $navigation; ?>
-        <div class="logo">
-            <h1 title="7chan Radio">7chan Radio</h1>
-        </div>
-
+        <?php echo $navigation; echo $logo; ?>
 
         <div class="replymode">
             <h2>Schedule</h2>

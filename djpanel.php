@@ -18,10 +18,9 @@ if (!$loggedin) header("Location: index.php");
 
     </head>
     <body>
-        <?php echo $navigation; ?>
-        <div class="logo">
-            <h1 title="7chan Radio">7chan Radio</h1>
-        </div>
+
+        <?php echo $navigation; echo $logo; ?>
+
         <div class="replymode">
             <h2>DJ Panel</h2>
         </div>

@@ -15,10 +15,8 @@ if ($loggedin) header("Location: djpanel.php");
         <link rel="stylesheet" href="css/burichan.css" type="text/css" />
     </head>
     <body>
-        <?php echo $navigation; ?>
-        <div class="logo">
-            <h1 title="7chan Radio">7chan Radio</h1>
-        </div>
+        <?php echo $navigation; echo $logo; ?>
+
         <?php
         $salt1 = "qm&h*";
         $salt2 = "pg!@";

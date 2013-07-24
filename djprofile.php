@@ -7,7 +7,7 @@ if (!$loggedin) header("Location: index.php");
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Change Password</title>
+        <title>DJ Profile</title>
 
         <meta name="robots" content="noindex, nofollow" />
 
@@ -17,10 +17,7 @@ if (!$loggedin) header("Location: index.php");
 
     </head>
     <body>
-        <?php echo $navigation; ?>
-        <div class="logo">
-            <h1 title="7chan Radio">7chan Radio</h1>
-        </div>
+        <?php echo $navigation; echo $logo; ?>
 
 
         <div class="replymode">

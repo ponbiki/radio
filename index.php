@@ -31,10 +31,9 @@ require 'codec.php';
 
     </head>
     <body>
-        <?php echo $navigation; ?>
-        <div class="logo">
-            <h1 title="7chan Radio">7chan Radio</h1>
-        </div>
+
+        <?php echo $navigation; echo $logo; ?>
+
         <div class="pic">
 
             <img src="img/anime_girl_dj.jpg" alt="Weeaboo DJ" title="Weeaboo DJ" width="330" height="248" />

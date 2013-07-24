@@ -19,10 +19,8 @@ if (!$admin) header("Location: djpanel.php");
 
     </head>
     <body>
-        <?php echo $navigation; ?>
-        <div class="logo">
-            <h1 title="7chan Radio">7chan Radio</h1>
-        </div>
+        <?php echo $navigation; echo $logo; ?>
+        
         <?php
         $error = $user = $pass = "";
 
