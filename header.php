@@ -7,4 +7,9 @@ if (isset($_SESSION['user'])) {
     $loggedin = TRUE;
 } else $loggedin = FALSE;
 
+if (isset($_SESSION['admin'])) {
+    $admin = TRUE;
+} else {
+    $admin = FALSE;
+}
 ?>

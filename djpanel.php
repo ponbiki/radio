@@ -2,6 +2,7 @@
 require 'header.php';
 
 if (!$loggedin) header("Location: index.php");
+
 ?>
 
 
@@ -33,9 +34,10 @@ if (!$loggedin) header("Location: index.php");
         <p><span id="welcome">Welcome, <?php echo $user; ?>.</span></p>
         <div class="dj">
             <ul>
-                <li><a href="addDJ.php" title="Add DJ">Add New DJ</a></li>
-                <li><a href="removeDJ.php" title="Remove DJ">Remove DJ</a></li>
-                <li><a href="changepwd.php" title="Change Password">Change Password</a></li>
+                <?php if ($admin)
+                    echo "<li><a href='addDJ.php' title='Add DJ'>Add New DJ</a></li>
+                        <li><a href='removeDJ.php' title='Remove DJ'>Remove DJ</a></li>"; ?>
+                    <li><a href='changepwd.php' title='Change Password'>Change Password</a></li>
             </ul>
         </div>
         <table>

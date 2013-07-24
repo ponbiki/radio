@@ -2,6 +2,9 @@
 require 'header.php';
 
 if (!$loggedin) header("Location: index.php");
+
+if (!$admin) header("Location: djpanel.php");
+
 ?>
 <!DOCTYPE html>
 <html>
