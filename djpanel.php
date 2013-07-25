@@ -24,7 +24,7 @@ if (!$loggedin) header("Location: index.php");
         <div class="replymode">
             <h2>DJ Panel</h2>
         </div>
-        <p><span id="welcome">Welcome, <?php echo $user; ?>.</span></p>
+        <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <div class="dj">
             <ul>
                 <?php if ($admin)

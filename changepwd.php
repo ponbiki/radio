@@ -42,7 +42,7 @@ if (!$loggedin) header("Location: index.php");
         <div class="replymode">
             <h2>Change Password</h2>
         </div>
-        <p><span id="welcome">Welcome, <?php echo $user; ?>.</span></p>
+        <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <p>Please input your new password twice</p>
         <form method='post' action='changepwd.php'><?php echo $error; ?>
             New Password &nbsp; &nbsp; &nbsp;<input type='password' maxlength='24' name='pass1' value="<?php $pass1; ?>" /><br />

@@ -43,6 +43,7 @@ if (!$admin) header("Location: djpanel.php");
         <div class="replymode">
             <h2>Remove DJ</h2>
         </div>
+        <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <form method='post' action='removedj.php'><?php echo $error; ?>
             DJ &nbsp; &nbsp;<select name='user' size='1'>
                 <?php while($row = mysql_fetch_array($result1)) {
