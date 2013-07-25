@@ -50,4 +50,5 @@ if (!$loggedin) header("Location: index.php");
             }
             ?>
         </table>
+    </body>
 </html>
