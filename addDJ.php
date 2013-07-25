@@ -79,7 +79,6 @@ if (!$admin) header("Location: djpanel.php");
         <div class="replymode">
             <h2>Add DJ</h2>
         </div>
-        <p><span id="welcome">Welcome, <?php echo $user; ?>.</span></p>
         <form method='post' action='addDJ.php'><?php echo $error; ?>
             Username <input type='text' maxlength='24' name='user' value="<?php $user; ?>"
                             onBLur='checkUser(this)'/><span id='info'></span><br />
