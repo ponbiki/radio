@@ -79,7 +79,7 @@ if (!$admin) header("Location: djpanel.php");
         <div class="replymode">
             <h2>Add DJ</h2>
         </div>
-        <form method='post' action='addDJ.php'><?php echo $error; ?>
+        <form method='post' action='adddj.php'><?php echo $error; ?>
             Username <input type='text' maxlength='24' name='user' value="<?php $user; ?>"
                             onBLur='checkUser(this)'/><span id='info'></span><br />
             Password &nbsp;<input type='password' maxlength='24' name='pass'
