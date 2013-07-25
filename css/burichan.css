@@ -7,6 +7,10 @@ body {
     color: #000000;
 }
 
+form {
+    padding: 15px;
+}
+
 a[href], a[href]:visited {
 	/*background:inherit;*/
 	color:#34345C;
