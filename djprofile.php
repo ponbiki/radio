@@ -34,7 +34,7 @@ if (!$loggedin) header("Location: index.php");
                 queryMysql("UPDATE profiles SET text='$text' where user='$user'");
             } else {
                 $query = "INSERT INTO profiles VALUES('$user', '$text')";
-                queryMysaql($query);
+                queryMysql($query);
             }
         } else {
             $query = "SELECT * FROM profiles WHERE user='$user'";
