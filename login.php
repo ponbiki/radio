@@ -6,8 +6,10 @@ if ($loggedin) header("Location: djpanel.php");
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
+
         <title>Log In</title>
+
         <meta name="robots" content="noindex, nofollow" />
 
         <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />

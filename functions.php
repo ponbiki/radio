@@ -30,7 +30,7 @@ function sanitizeString($var) {
 
 function showProfile($user) {
     if (file_exists("$user.jpg"))
-        echo "<i,g src='$user.jpg' border='1' align='left' />";
+        echo "<img src='$user.jpg' border='1' align='left' />";
 
     $result = queryMysql("SELECT * FROM profiles WHERE user='$user'");
     if (mysql_num_rows($result)) {
