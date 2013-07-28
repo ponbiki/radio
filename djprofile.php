@@ -111,16 +111,14 @@ if (!$loggedin) header("Location: index.php");
         }
 
         showProfile($djname);
+        ?>
 
-echo <<<_END
-<form method='post' action='djprofile.php'
-        enctype='multipart/form-data'>
-Enter or edit your details and/or upload an image:<br />
-<textarea name='text' cols='40' rows='3'>$text</textarea><br />
-Image: <input type='file' name='image' size='14' maxlength='32' />
-<input type='submit' value='Save Profile' />
-</pre></form>
-_END;
-?>
+        <form method='post' action='djprofile.php'
+                enctype='multipart/form-data'>
+        Enter or edit your details and/or upload an image:<br />
+        <textarea name='text' cols='40' rows='3'><?php echo $text; ?></textarea><br />
+        Image: <input type='file' name='image' size='14' maxlength='32' />
+        <input type='submit' value='Save Profile' />
+        </form>
     </body>
 </html>
