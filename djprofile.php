@@ -38,7 +38,7 @@ if (!$loggedin) header("Location: index.php");
                 }
                 else
                 {
-                        $query = "INSERT INTO profiles VALUES('$user', '$text')";
+                        $query = "INSERT INTO profiles VALUES('$djname', '$text')";
                         queryMysql($query);
                 }
         }
