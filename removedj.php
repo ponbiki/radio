@@ -35,7 +35,10 @@ if (!$admin) header("Location: djpanel.php");
             $error = "Please check and confirm your selection before deleting<br />";
         } else {
                 $query2 = "DELETE FROM djs WHERE username='$user'";
+                $query3 = "DELETE FROM profiles WHERE user='$user'";
                 queryMysql($query2);
+                queryMysql($query3);
+                if (!unlink("djpics/$user.jpg")) echo "Please manually delete " . $user . "'s profile picture.";
                 die("<h4>$user has been removed</h4><br /><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
             }
         }

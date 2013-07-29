@@ -12,16 +12,16 @@ form {
 }
 
 a[href], a[href]:visited {
-	/*background:inherit;*/
-	color:#34345C;
-	text-decoration:none;
-	font-family:sans-serif;
+    /*background:inherit;*/
+    color:#34345C;
+    text-decoration:none;
+    font-family:sans-serif;
 }
 
 a[href]:hover {
-	color:#DD0000;
-	/*background:inherit;*/
-	font-family:sans-serif;
+    color:#DD0000;
+    /*background:inherit;*/
+    font-family:sans-serif;
 }
 
 hr {
@@ -32,13 +32,13 @@ hr {
     margin: 1em 0;
     border: 0;
     background: #C7CAD4;
-background: -moz-linear-gradient(left, rgba(199,202,212,0.05) 0%, rgba(199,202,212,0.05) 1%, rgba(199,202,212,0.75) 10%, rgba(199,202,212,1) 50%, rgba(199,202,212,0.75) 90%, rgba(199,202,212,0.05) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(199,202,212,0.05)), color-stop(1%,rgba(199,202,212,0.05)), color-stop(10%,rgba(199,202,212,0.75)), color-stop(50%,rgba(199,202,212,1)), color-stop(90%,rgba(199,202,212,0.75)), color-stop(100%,rgba(199,202,212,0.05))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* IE10+ */
-background: linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', endColorstr='#0dc7cad4',GradientType=1 ); /* IE6-9 */
+    background: -moz-linear-gradient(left, rgba(199,202,212,0.05) 0%, rgba(199,202,212,0.05) 1%, rgba(199,202,212,0.75) 10%, rgba(199,202,212,1) 50%, rgba(199,202,212,0.75) 90%, rgba(199,202,212,0.05) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(199,202,212,0.05)), color-stop(1%,rgba(199,202,212,0.05)), color-stop(10%,rgba(199,202,212,0.75)), color-stop(50%,rgba(199,202,212,1)), color-stop(90%,rgba(199,202,212,0.75)), color-stop(100%,rgba(199,202,212,0.05))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* IE10+ */
+    background: linear-gradient(left, rgba(199,202,212,0.05) 0%,rgba(199,202,212,0.05) 1%,rgba(199,202,212,0.75) 10%,rgba(199,202,212,1) 50%,rgba(199,202,212,0.75) 90%,rgba(199,202,212,0.05) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', endColorstr='#0dc7cad4',GradientType=1 ); /* IE6-9 */
 }
 
 .pic {
@@ -51,32 +51,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', e
 }
 
 .logo+hr {
-	display: none;
+    display: none;
 }
 .logo {
-	display:block;
+    display:block;
 }
 
 .logo {
-	clear:both;
-	text-align:center;
-	/*background:inherit;*/
-	font-size:24pt;
-	color:#AF0A0F;
-	width:100%;
+    clear:both;
+    text-align:center;
+    /*background:inherit;*/
+    font-size:24pt;
+    color:#AF0A0F;
+    width:100%;
 }
 
 .footer {
-	text-align:center;
-	font-size:10px;
-	font-family:sans-serif;
+    text-align:center;
+    font-size:10px;
+    font-family:sans-serif;
 }
 
 .replymode {
-	background:#0010E0;
-	color:#FFFFFF;
-	width:100%;
-        font-size: 0.7em;
+    background:#0010E0;
+    color:#FFFFFF;
+    width:100%;
+    font-size: 0.7em;
 }
 #playing {
     width: 75%;
@@ -90,19 +90,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0dc7cad4', e
 }
 
 #announcer {
-	/*font-size:0.7em;*/
-	/*width: 70%;*/
-	font-size: 16px;
-	font-family: sans-serif;
-        float: right;
-        margin: 10px;
-        padding: 10px;
-        text-align: left;
+    /*font-size:0.7em;*/
+    /*width: 70%;*/
+    font-size: 16px;
+    font-family: sans-serif;
+    float: right;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
 }
 
 #rules li {
-	margin-left: 1em;
-	/*text-indent: 0em;*/
+    margin-left: 1em;
+    /*text-indent: 0em;*/
 }
 
 body,html {
@@ -138,36 +138,36 @@ ol li * {
 }
 
 ol li small {
-		float:left;
-		margin-top: .5em;
+    float:left;
+    margin-top: .5em;
     /*font-size: inherit;
     font-weight: bold;*/
 }
 
 .navbar {
-background-color:#f1f1fa;
-border:1px solid #C5C8D2;
-margin-top:5px;
-padding: .5em;
-text-align:center;
+    background-color:#f1f1fa;
+    border:1px solid #C5C8D2;
+    margin-top:5px;
+    padding: .5em;
+    text-align:center;
 }
 
 ol, li {
-	list-style-position:inside;
+    list-style-position:inside;
 }
 
 .replymode {
-  background:#D6DFF0;
-  color:#4F5260 !important;
-  width:100%;
-	border: 1px solid #C5C8D2;
-	padding: 5px;
-	margin-bottom: 5px;
+    background:#D6DFF0;
+    color:#4F5260 !important;
+    width:100%;
+    border: 1px solid #C5C8D2;
+    padding: 5px;
+    margin-bottom: 5px;
 }
 
 .logo {
-	margin-top: 10px;
-	margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #welcome {
     font-size: 12pt;
@@ -184,4 +184,9 @@ table {
     text-align: center;
     border: 1px solid #C5C8D2;
     background-color: #D6DFF0;
+}
+
+.djprofile {
+    width: 85%;
+    margin: 5px;
 }

@@ -29,13 +29,18 @@ function sanitizeString($var) {
 }
 
 function showProfile($djname) {
-    if (file_exists("djpics/$djname.jpg"))
-        echo "<img src='djpics/$djname.jpg' border='1' align='left' />";
-
+    echo "<div class='djprofile'>";
+    if (file_exists("djpics/$djname.jpg")) {
+        list($w, $h) = getimagesize("djpics/$djname.jpg");
+        $width = $w . "px";
+        $height = $h . "px";
+        echo "<img src='djpics/$djname.jpg' alt='$djname' title='$djname' style='border: #9988EE solid; border-width: 1px; padding: 1px; width: $width; height: $height;' />";
+    }
     $result = queryMysql("SELECT * FROM profiles WHERE user='$djname'");
     if (mysql_num_rows($result)) {
         $row = mysql_fetch_row($result);
-        echo stripslashes($row[1]) . "<br clear=left /><br />";
+        echo "<span style='float: right; width: 500px;'>" . stripslashes($row[1]) . "</span>";
     }
+    echo "</div><br /><br />";
 }
 ?>
