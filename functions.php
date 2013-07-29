@@ -29,8 +29,8 @@ function sanitizeString($var) {
 }
 
 function showProfile($djname) {
-    if (file_exists("$djname.jpg"))
-        echo "<img src='$djname.jpg' border='1' align='left' />";
+    if (file_exists("djpics/$djname.jpg"))
+        echo "<img src='djpics/$djname.jpg' border='1' align='left' />";
 
     $result = queryMysql("SELECT * FROM profiles WHERE user='$djname'");
     if (mysql_num_rows($result)) {

@@ -59,7 +59,7 @@ if (!$loggedin) header("Location: index.php");
 
         if (isset($_FILES['image']['name']))
         {
-                $saveto = "$djname.jpg";
+                $saveto = "djpics/$djname.jpg";
                 move_uploaded_file($_FILES['image']['tmp_name'], $saveto);
                 $typeok = TRUE;
 
@@ -78,7 +78,7 @@ if (!$loggedin) header("Location: index.php");
                 if ($typeok)
                 {
                         list($w, $h) = getimagesize($saveto);
-                        $max = 100;
+                        $max = 300;
                         $tw  = $w;
                         $th  = $h;
 
