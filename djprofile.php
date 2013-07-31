@@ -115,10 +115,16 @@ if (!$loggedin) header("Location: index.php");
 
         <form method='post' action='djprofile.php'
                 enctype='multipart/form-data'>
-        Enter or edit your details and/or upload an image:<br />
-        <textarea name='text' cols='40' rows='3'><?php echo $text; ?></textarea><br />
-        Image: <input type='file' name='image' size='14' maxlength='32' />
-        <input type='submit' value='Save Profile' />
+            <table style="float: left;">
+                <tr>
+                    <td style="text-align: left;">Enter or edit your details and/or upload an image:</td>
+                </tr><tr>
+                    <td style="text-align: left;"><textarea name='text' cols='45' rows='4'><?php echo $text; ?></textarea></td>
+                </tr><tr>
+                    <td style="text-align: left;">Image: <input type='file' name='image' size='14' maxlength='32' />
+                    <input type='submit' value='Save Profile' /></td>
+                </tr>
+            </table>
         </form>
     </body>
 </html>

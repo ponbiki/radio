@@ -39,7 +39,7 @@ function showProfile($djname) {
     $result = queryMysql("SELECT * FROM profiles WHERE user='$djname'");
     if (mysql_num_rows($result)) {
         $row = mysql_fetch_row($result);
-        echo "<span style='float: right; width: 500px;'>" . stripslashes($row[1]) . "</span>";
+        echo "<span style='float: right; width: 60%;'>" . stripslashes($row[1]) . "</span>";
     }
     echo "</div><br /><br />";
 }

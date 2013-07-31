@@ -46,10 +46,15 @@ if (!$loggedin) header("Location: index.php");
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <p>Please input your new password twice</p>
         <form method='post' action='changepwd.php'><?php echo $error; ?>
-            New Password &nbsp; &nbsp; &nbsp;<input type='password' maxlength='24' name='pass1' value="<?php $pass1; ?>" /><br />
-            Confirm Password <input type='password' maxlength='24' name='pass2' value="<?php $pass2; ?>" /><br />
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type='submit' value='Change' />
+            <table style="float: left;">
+                <tr>
+                    <td style="text-align: left;">New Password</td><td style="text-align: right;"><input type='password' maxlength='24' name='pass1' value="<?php $pass1; ?>" /></td>
+            </tr><tr>
+                    <td style="text-align: left;">Confirm Password</td><td style="text-align: right;"><input type='password' maxlength='24' name='pass2' value="<?php $pass2; ?>" /></td>
+                </tr><tr>
+                    <td></td><td style="text-align: right;"><input type='submit' value='Change' /></td>
+                </tr>
+            </table>
         </form>
         <table>
             <tr><th>DJs</th></tr>

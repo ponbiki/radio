@@ -49,14 +49,19 @@ if (!$admin) header("Location: djpanel.php");
         </div>
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <form method='post' action='removedj.php'><?php echo $error; ?>
-            DJ &nbsp; &nbsp;<select name='user' size='1'>
-                <?php while($row = mysql_fetch_array($result1)) {
-                    echo "<option value='" . $row[username] . "'>" . $row[username] . "</option>";
-                } ?>
-            </select><br />
-            <label>Confirm Selection &nbsp; &nbsp; &nbsp; <input type="checkbox" name="confirm"></label><br /><br />
-            &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type='submit' value='Remove' />
+            <table style="float: left;">
+                <tr>
+                    <td style="text-align: left;">DJ</td><td style="text-align: right;"><select name='user' size='1'>
+                        <?php while($row = mysql_fetch_array($result1)) {
+                            echo "<option value='" . $row[username] . "'>" . $row[username] . "</option>";
+                        } ?>
+                    </select></td>
+                </tr><tr>
+                    <td style="text-align: left;">Confirm Selection</td><td style="text-align: right;"><input type="checkbox" name="confirm"></td>
+                </tr><tr>
+                    <td></td><td style="text-align: right;"><input type='submit' value='Remove' /></td>
+                </tr>
+            </table>
         </form>
         <table>
             <tr><th>DJs</th></tr>

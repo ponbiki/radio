@@ -51,14 +51,18 @@ if ($loggedin) header("Location: djpanel.php");
                 }
             }
         }
-echo <<<_END
-        <form method='post' action='login.php'>$error
-            Username <input type='text' maxlength='24' name='user' value="$user" /><br />
-            Password &nbsp;<input type='password' maxlength='24' name='pass' value="$pass" /><br />
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type="submit" value="Login" />
-        </form>
-_END;
 ?>
+        <form method='post' action='login.php'><?php echo $error ?>
+            <table style="float: left;">
+                <tr>
+                    <td style="text-align: left;">Username</td><td style="text-align: right;"><input type='text' maxlength='24' name='user' value="<?php echo $user ?>" /></td>
+                </tr><tr>
+                    <td style="text-align: left;">Password</td><td style="text-align: right;"><input type='password' maxlength='24' name='pass' value="<?php echo $pass ?>" /></td>
+                </tr><tr>
+                    <td></td><td style="text-align: right;"><input type="submit" value="Login" /></td>
+            </tr>
+            </table>
+        </form>
+
     </body>
 </html>

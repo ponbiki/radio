@@ -27,7 +27,7 @@ if (!$loggedin) header("Location: index.php");
         </div>
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <div class="dj">
-            <ul>
+            <ul style="list-style-type: none;"">
                 <?php if ($admin)
                     echo "<li><a href='adddj.php' title='Add DJ'>Add New DJ</a></li>
                         <li><a href='removedj.php' title='Remove DJ'>Remove DJ</a></li>"; ?>

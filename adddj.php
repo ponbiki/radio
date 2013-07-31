@@ -82,13 +82,19 @@ if (!$admin) header("Location: djpanel.php");
         </div>
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <form method='post' action='adddj.php'><?php echo $error; ?>
-            Username <input type='text' maxlength='24' name='user' value="<?php $user; ?>"
-                            onBLur='checkUser(this)'/><span id='info'></span><br />
-            Password &nbsp;<input type='password' maxlength='24' name='pass'
-                            value="<?php $pass; ?>" /><br />
-            <label>Make Administrator &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="checkbox" name="admin"></label><br /><br />
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <input type='submit' value='Add DJ' />
+            <table style="float: left;">
+                <tr>
+                    <td style="text-align: left;">Username</td><td style="text-align: right;"><input type='text' maxlength='24' name='user' value="<?php $user; ?>"
+                                    onBLur='checkUser(this)'/><span id='info'></span></td>
+                </tr><tr>
+                    <td style="text-align: left;">Password</td><td style="text-align: right;"><input type='password' maxlength='24' name='pass'
+                                    value="<?php $pass; ?>" /><br /></td>
+                </tr><tr>
+                    <td style="text-align: left;">Make Administrator</td><td style="text-align: right;"><input type="checkbox" name="admin"></td>
+                </tr><tr>
+                    <td></td><td style="text-align: right;"><input type='submit' value='Add DJ' /></td>
+                </tr>
+            </table>
         </form>
         <table>
             <tr><th>DJs</th></tr>
