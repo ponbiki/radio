@@ -117,7 +117,7 @@ if (!$loggedin) header("Location: index.php");
                 enctype='multipart/form-data'>
             <table style="float: left;">
                 <tr>
-                    <td style="text-align: left;">Enter or edit your details and/or upload an image:</td>
+                    <td style="text-align: left;">Enter or edit a profile and/or upload an image:</td>
                 </tr><tr>
                     <td style="text-align: left;"><textarea name='text' cols='45' rows='4'><?php echo $text; ?></textarea></td>
                 </tr><tr>
