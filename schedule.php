@@ -2,7 +2,7 @@
 include "header.php";
 
 define("ADAY", (60*60*24));
-if((!isset($_POST["month"])) || (!isse($_POST["year"]))) {
+if((!isset($_POST["month"])) || (!isset($_POST["year"]))) {
     $nowArray = getdate();
     $month = $nowArray["mon"];
     $year = $nowArray["year"];
@@ -55,7 +55,41 @@ $firstDayArray = getdate($start);
             </select>
             <select name="year">
                 <?php
-                
+                for ($x=2013; $x<=2025; $x++) {
+                    echo "<option";
+                    if ($x == $year) {
+                        echo " selected";
+                    }
+                    echo ">$x</option>";
+                }
                 ?>
             </select>
+            <input type="submit" value="Go">
         </form>
+        <br/>
+        <?php
+        $days = Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+        echo "<table cellpadding='5' style='table-border: solid 1px; float: left;'><tr>\n";
+        foreach ($days as $day) {
+            echo "<td style='text-weight: bold; text-align: center; width: 65px; height: 50px;'>$day</td>\n";
+        }
+        for ($count=0; $count < (6*7); $count++) {
+            $dayArray = getdate($start);
+            if (($count % 7) == 0) {
+                if ($dayArray["mon"] != $month) {
+                    break;
+                } else {
+                    echo "</tr><tr>\n";
+                }
+            }
+            if (($count < $firstDayArray["wday"]) || ($dayArray["mon"] != $month)) {
+                echo "<td>&nbsp;</td>\n";
+            } else {
+                echo "<td>" .$dayArray["mday"]. " &nbsp;&nbsp; </td>\n";
+                $start += ADAY;
+            }
+        }
+        echo "</tr></table>";
+        ?>
+    </body>
+</html>
