@@ -33,9 +33,9 @@ if (!$loggedin) header("Location: index.php");
             if (($pass1 == "" || $pass2 == "") || ($pass1 != $pass2)) {
                 $error = "Not all fields were entered, or the password do not match.  Please try again.<br /><br />";
             } else {
-                $query = "UPDATE djs SET password='$token' WHERE username='$user'";
+                $query = "UPDATE djs SET password='$token' WHERE username='$djname'";
                 queryMysql($query);
-                die("<h4>Password for $user changed</h4><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
+                die("<h4>Password for $djname changed</h4><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
                 }
         }
         ?>
