@@ -2,14 +2,15 @@
 include "header.php";
 
 define("ADAY", (60*60*24));
-if((!isset($_POST["month"])) || (!isset($_POST["year"]))) {
-    $nowArray = getdate();
-    $month = $nowArray["mon"];
-    $year = $nowArray["year"];
+if ((!isset($_POST['month'])) || (!isset($_POST['year']))) {
+        $nowArray = getdate();
+        $month = $nowArray['mon'];
+        $year = $nowArray['year'];
 } else {
-    $month = $_POST["month"];
-    $year = $_POST["year"];
+        $month = $_POST['month'];
+        $year = $_POST['year'];
 }
+
 $start = mktime (12, 0, 0, $month, 1, $year);
 $firstDayArray = getdate($start);
 ?>
@@ -76,17 +77,32 @@ $firstDayArray = getdate($start);
         for ($count=0; $count < (6*7); $count++) {
             $dayArray = getdate($start);
             if (($count % 7) == 0) {
-                if ($dayArray["mon"] != $month) {
+                if ($dayArray['mon'] != $month) {
                     break;
                 } else {
                     echo "</tr><tr>\n";
                 }
             }
-            if (($count < $firstDayArray["wday"]) || ($dayArray["mon"] != $month)) {
+            if ($count < $firstDayArray['wday'] || $dayArray['mon'] != $month) {
                 echo "<td>&nbsp;</td>\n";
             } else {
-                echo "<td>" .$dayArray["mday"]. " &nbsp;&nbsp; </td>\n";
-                $start += ADAY;
+                $query = "SELECT event_title FROM calendar_events WHERE
+                     month(event_start) = '".$month."' AND
+                     dayofmonth(event_start) = '".$dayArray['mday']."'
+                     AND year(event_start) = '".$year."' ORDER BY event_start";
+                 $chkEvent_res = queryMysql($query);
+                 if (mysql_num_rows($chkEvent_res) > 0) {
+                     while ($ev = mysql_fetch_array($chkEvent_res)) {
+                         $event_title .= stripslashes($ev['event_title'])."<br/>";
+                     }
+                 } else {
+                     $event_title = "";
+                 }
+                 echo "<td><a href=\"javascript:eventWindow('event.php?m=".$month.
+                 "&amp;d=".$dayArray['mday']."&amp;y=$year');\">".$dayArray['mday']."</a>
+                 <br/><br/>".$event_title."</td>\n";
+                 unset($event_title);
+                 $start += ADAY;
             }
         }
         echo "</tr></table>";
