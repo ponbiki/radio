@@ -38,6 +38,12 @@ require 'codec.php';
             <img src="img/anime_girl_dj.jpg" alt="Weeaboo DJ" title="Weeaboo DJ" width="330" height="248" />
 
         </div>
+        
+            <?php
+            $nowArray = getdate();
+            $month = $nowArray['mon'];
+            $year = $nowArray['year'];
+            ?>
 
         <div class="replymode">
             <h2>Now Playing</h2>

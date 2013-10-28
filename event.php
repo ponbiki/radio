@@ -3,8 +3,18 @@ include 'header.php';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-<title>Show/Add Events</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
+
+        <title>Schedule</title>
+
+        <meta name="robots" content="noindex, nofollow" />
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
+
+        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
+
+    </head>
 <body>
 <h1>Show/Add Events</h1>
 <?php
