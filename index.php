@@ -38,27 +38,39 @@ require 'codec.php';
             <img src="img/anime_girl_dj.jpg" alt="Weeaboo DJ" title="Weeaboo DJ" width="330" height="248" />
 
         </div>
-        
+        <div class="daily">
+
             <?php
             $nowArray = getdate();
             $month = $nowArray['mon'];
             $monthText = $nowArray['month'];
             $year = $nowArray['year'];
             $day = $nowArray['mday'];
-            echo $day ." ". $monthText ." ". $year;
-            
-            $query = "SELECT event_title FROM calendar_events WHERE month(event_start) ='".$month."' AND
-                dayofmonth(event_start) ='".$day."' AND year(event_start) = '".$year."' ORDER BY event_start";
+            echo "<h2>". $day ." ". $monthText ." ". $year ."</h2>";
+
+            $query = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date FROM calendar_events
+                WHERE month(event_start) ='".$month."' AND dayofmonth(event_start) ='".$day."' AND year(event_start) = '".$year."'
+                ORDER BY event_start";
             $chkEvent_res = queryMysql($query);
             if (mysql_num_rows($chkEvent_res) > 0) {
+                $event_txt = "<ul>";
                 while ($ev = mysql_fetch_array($chkEvent_res)) {
-                    $event_title .= stripslashes($ev['event_title'])."<br/>";
+                    $event_title = stripslashes($ev['event_title']);
+                    $event_shortdesc = stripslashes($ev['event_shortdesc']);
+                    $fmt_date = $ev['fmt_date'];
+                    $event_txt .="<li><strong>". $fmt_date ."</strong>: ". $event_title ."<br />".
+                            $event_shortdesc ."</li>";
                 }
+                $event_txt .= "</ul>";
+                mysql_free_result($chkEvent_res);
             } else {
-                $event_title = "";
+                $event_txt = "";
             }
-            echo $event_title;
+            if ($event_txt != "") {
+                echo "<p><strong>Today's Lineup:</strong></p>$event_txt<hr />";
+            }
             ?>
+        </div>
 
         <div class="replymode">
             <h2>Now Playing</h2>

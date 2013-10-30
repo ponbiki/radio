@@ -33,6 +33,7 @@ if (!$loggedin) header("Location: index.php");
                         <li><a href='removedj.php' title='Remove DJ'>Remove DJ</a></li>"; ?>
                     <li><a href='changepwd.php' title='Change Password'>Change Password</a></li>
                     <li><a href='djprofile.php' title='DJ Profile'>DJ Profile</a></li>
+                    <li><a href='schedule.php' title='Schedule'>Schedule Set</a></li>
             </ul>
         </div>
         <table>

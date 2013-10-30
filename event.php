@@ -1,12 +1,14 @@
 <?php
 include 'header.php';
+global $djname;
+if (!$loggedin) header("Location: schedule.php");
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>Schedule</title>
+        <title>Add Set</title>
 
         <meta name="robots" content="noindex, nofollow" />
 
@@ -64,17 +66,17 @@ if ($event_txt != "") {
 // show form for adding an event
 echo <<<END_OF_TEXT
 <form method="post" action="$_SERVER[PHP_SELF]">
-<p><strong>Would you like to add an event?</strong><br/>
-Complete the form below and press the submit button to add the event and refresh this window.</p>
+<p><strong>Would you like to add a set?</strong><br/>
+Complete the form below and press the submit button to add the set and refresh this window.</p>
 
-<p><label for="event_title">Event Title:</label><br/>
-<input type="text" id="event_title" name="event_title" size="25" maxlength="25" /></p>
+<p><label for="event_title">DJ: $djname</label><br/>
+<input type="hidden" id="event_title" name="event_title" size="25" maxlength="25" value="$djname" /></p>
 
-<p><label for="event_shortdesc">Event Description:</label><br/>
-<input type="text" id="event_shortdesc" name="event_shortdesc" size="25" maxlength="255" /></p>
+<p><label for="event_shortdesc">Set Description:</label><br/>
+<input type="text" id="event_shortdesc" name="event_shortdesc" size="35" maxlength="255" /></p>
 
 <fieldset>
-<legend>Event Time (hh:mm):</legend>
+<legend>Set Time (hh:mm):</legend>
 <select name="event_time_hh">
 END_OF_TEXT;
 
@@ -95,7 +97,7 @@ echo <<<END_OF_TEXT
 <input type="hidden" name="d" value="$safe_d">
 <input type="hidden" name="y" value="$safe_y">
 
-<button type="submit" name="submit" value="submit">Add Event</button>
+<button type="submit" name="submit" value="submit">Add Set</button>
 </form>
 END_OF_TEXT;
 ?>

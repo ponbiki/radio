@@ -30,7 +30,7 @@ $firstDayArray = getdate($start);
         <script type="text/javascript">
             function eventWindow(url) {
                 event_popupWin = window.open(url, 'event',
-                    'resizable=yes,scrollbar=yes,toolbar=no,width=400,h$chkEventeight=400');
+                    'resizable=yes,scrollbar=yes,toolbar=no,width=400,height=600');
                 event_popupWin.opener = self;
             }
         </script>
@@ -72,7 +72,7 @@ $firstDayArray = getdate($start);
         $days = Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
         echo "<table cellpadding='5' style='table-border: solid 1px; float: left;'><tr>\n";
         foreach ($days as $day) {
-            echo "<td style='text-weight: bold; text-align: center; width: 65px; height: 50px;'>$day</td>\n";
+            echo "<td style='text-weight: bold; text-align: center; vertical-align: center; width: 65px; height: 50px;'>$day</td>\n";
         }
         for ($count=0; $count < (6*7); $count++) {
             $dayArray = getdate($start);
@@ -93,16 +93,24 @@ $firstDayArray = getdate($start);
                  $chkEvent_res = queryMysql($query);
                  if (mysql_num_rows($chkEvent_res) > 0) {
                      while ($ev = mysql_fetch_array($chkEvent_res)) {
-                         $event_title .= stripslashes($ev['event_title'])."<br/>";
+                         $event_title .= sanitizeString($ev['event_title'])."<br/>";
                      }
                  } else {
                      $event_title = "";
                  }
-                 echo "<td><a href=\"javascript:eventWindow('event.php?m=".$month.
-                 "&amp;d=".$dayArray['mday']."&amp;y=$year');\">".$dayArray['mday']."</a>
-                 <br/><br/>".$event_title."</td>\n";
-                 unset($event_title);
-                 $start += ADAY;
+                 if ($loggedin) {
+                     echo "<td><a href=\"javascript:eventWindow('event.php?m=".$month.
+                     "&amp;d=".$dayArray['mday']."&amp;y=$year');\">".$dayArray['mday']."</a>
+                     <br/><br/>".$event_title."</td>\n";
+                     unset($event_title);
+                     $start += ADAY;
+                 } else {
+                     echo "<td><a href=\"javascript:eventWindow('event2.php?m=".$month.
+                     "&amp;d=".$dayArray['mday']."&amp;y=$year');\">".$dayArray['mday']."</a>
+                     <br/><br/>".$event_title."</td>\n";
+                     unset($event_title);
+                     $start += ADAY;
+                 }
             }
         }
         echo "</tr></table>";
