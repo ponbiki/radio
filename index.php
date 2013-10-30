@@ -42,7 +42,22 @@ require 'codec.php';
             <?php
             $nowArray = getdate();
             $month = $nowArray['mon'];
+            $monthText = $nowArray['month'];
             $year = $nowArray['year'];
+            $day = $nowArray['mday'];
+            echo $day ." ". $monthText ." ". $year;
+            
+            $query = "SELECT event_title FROM calendar_events WHERE month(event_start) ='".$month."' AND
+                dayofmonth(event_start) ='".$day."' AND year(event_start) = '".$year."' ORDER BY event_start";
+            $chkEvent_res = queryMysql($query);
+            if (mysql_num_rows($chkEvent_res) > 0) {
+                while ($ev = mysql_fetch_array($chkEvent_res)) {
+                    $event_title .= stripslashes($ev['event_title'])."<br/>";
+                }
+            } else {
+                $event_title = "";
+            }
+            echo $event_title;
             ?>
 
         <div class="replymode">
