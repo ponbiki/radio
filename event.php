@@ -18,7 +18,7 @@ if (!$loggedin) header("Location: schedule.php");
 
     </head>
 <body>
-<h1>Show/Add Events</h1>
+<h1>Add Sets</h1>
 <?php
 if ($_POST) {
         $safe_m = sanitizeString($_POST['m']);
@@ -58,7 +58,7 @@ if (mysql_num_rows($getEvent_res) > 0) {
 }
 
 if ($event_txt != "") {
-        echo "<p><strong>Today's Events:</strong></p>
+        echo "<p><strong>Today's Sets:</strong></p>
         $event_txt
         <hr/>";
 }

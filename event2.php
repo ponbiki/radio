@@ -16,7 +16,7 @@ include 'header.php';
 
     </head>
 <body>
-<h1>Show/Add Events</h1>
+<h1>Show Sets</h1>
 <?php
         $safe_m = sanitizeString($_GET['m']);
         $safe_d = sanitizeString($_GET['d']);
@@ -40,7 +40,7 @@ if (mysql_num_rows($getEvent_res) > 0) {
 }
 
 if ($event_txt != "") {
-        echo "<p><strong>Today's Events:</strong></p>
+        echo "<p><strong>Today's Sets:</strong></p>
         $event_txt
         <hr/>";
 }
