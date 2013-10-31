@@ -187,12 +187,14 @@ ol, li {
 
 table {
     float: right;
-    padding: 15px;
+    padding: 10px;
     color: #4F5260;
-    text-align: center;
+    text-align: top;
     border: 1px solid #C5C8D2;
     background-color: #D6DFF0;
 }
+
+
 
 .djprofile {
     width: 85%;

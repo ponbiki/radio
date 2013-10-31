@@ -20,7 +20,7 @@ if (!$loggedin) header("Location: schedule.php");
 <body>
 <h1>Add Sets</h1>
 <?php
-if ($_POST) {
+if ($_POST['submit']) {
         $safe_m = sanitizeString($_POST['m']);
         $safe_d = sanitizeString($_POST['d']);
         $safe_y = sanitizeString($_POST['y']);
@@ -39,17 +39,29 @@ if ($_POST) {
         $safe_d = sanitizeString($_GET['d']);
         $safe_y = sanitizeString($_GET['y']);
 }
-$query2 = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date FROM calendar_events WHERE month(event_start) = '".$safe_m."' AND dayofmonth(event_start) = '".$safe_d."' AND year(event_start) = '".$safe_y."' ORDER BY event_start";
+$query2 = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date FROM calendar_events WHERE month(event_start) = '
+    ".$safe_m."' AND dayofmonth(event_start) = '".$safe_d."' AND year(event_start) = '".$safe_y."' ORDER BY event_start";
 $getEvent_res = queryMysql($query2);
 
 if (mysql_num_rows($getEvent_res) > 0) {
-        $event_txt = "<ul>";
+        $event_txt = "<ul style='list-style-type: none;'>";
         while ($ev = @mysql_fetch_array($getEvent_res)) {
                 $event_title = stripslashes($ev['event_title']);
                 $event_shortdesc = stripslashes($ev['event_shortdesc']);
                 $fmt_date = $ev['fmt_date'];
 
-                $event_txt .= "<li><strong>".$fmt_date."</strong>: ".$event_title."<br/>".$event_shortdesc."</li>";
+                if (($event_title == $djname) || ($admin)) {
+                    $query3 = "DELETE FROM calendar_events WHERE event_title='$event_title'
+                        AND event_shortdesc='$event_shortdesc'";
+                    $event_txt .= "<li><form name='delete' method='post'><strong>".$fmt_date."</strong>: ".$event_title." - ".$event_shortdesc.
+                            "&nbsp;&nbsp;&nbsp;&nbsp;<button type='submit' name='delete' value='Delete'>Delete</button></form></li>";
+                    if ($_POST['delete']) {
+                        queryMysql($query3);
+                        die("<h4>Event has been removed</h4>");
+                    }
+                } else {
+                    $event_txt .= "<li><strong>".$fmt_date."</strong>: ".$event_title." - ".$event_shortdesc."</li>";
+                }
         }
         $event_txt .= "</ul>";
         mysql_free_result($getEvent_res);
@@ -65,7 +77,7 @@ if ($event_txt != "") {
 
 // show form for adding an event
 echo <<<END_OF_TEXT
-<form method="post" action="$_SERVER[PHP_SELF]">
+<form name="event" method="post" action="$_SERVER[PHP_SELF]">
 <p><strong>Would you like to add a set?</strong><br/>
 Complete the form below and press the submit button to add the set and refresh this window.</p>
 

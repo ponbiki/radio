@@ -70,9 +70,9 @@ $firstDayArray = getdate($start);
         <br/>
         <?php
         $days = Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
-        echo "<table cellpadding='5' style='table-border: solid 1px; float: left;'><tr>\n";
+        echo "<table cellpadding='5' style='border: 1px solid #C5C8D2; float: left;'><tr>\n";
         foreach ($days as $day) {
-            echo "<td style='text-weight: bold; text-align: center; vertical-align: center; width: 65px; height: 50px;'>$day</td>\n";
+            echo "<td cellpadding='5' style='text-weight: bold; border: 1px dotted #C5C8D2; text-align: center; vertical-align: center; width: 85px; height: 60px;'>$day</td>\n";
         }
         for ($count=0; $count < (6*7); $count++) {
             $dayArray = getdate($start);
@@ -80,11 +80,11 @@ $firstDayArray = getdate($start);
                 if ($dayArray['mon'] != $month) {
                     break;
                 } else {
-                    echo "</tr><tr>\n";
+                    echo "</tr><tr style='border: 1px dotted #C5C8D2;'>\n";
                 }
             }
             if ($count < $firstDayArray['wday'] || $dayArray['mon'] != $month) {
-                echo "<td>&nbsp;</td>\n";
+                echo "<td style='border: 1px dotted #C5C8D2; vertical-align: top;'>&nbsp;</td>\n";
             } else {
                 $query = "SELECT event_title FROM calendar_events WHERE
                      month(event_start) = '".$month."' AND
@@ -99,13 +99,13 @@ $firstDayArray = getdate($start);
                      $event_title = "";
                  }
                  if ($loggedin) {
-                     echo "<td><a href=\"javascript:eventWindow('event.php?m=".$month.
+                     echo "<td style='border: 1px dotted #C5C8D2; vertical-align: top;'><a href=\"javascript:eventWindow('event.php?m=".$month.
                      "&amp;d=".$dayArray['mday']."&amp;y=$year');\">".$dayArray['mday']."</a>
                      <br/><br/>".$event_title."</td>\n";
                      unset($event_title);
                      $start += ADAY;
                  } else {
-                     echo "<td><a href=\"javascript:eventWindow('event2.php?m=".$month.
+                     echo "<td style='border: 1px dotted #C5C8D2; vertical-align: top;'><a href=\"javascript:eventWindow('event2.php?m=".$month.
                      "&amp;d=".$dayArray['mday']."&amp;y=$year');\">".$dayArray['mday']."</a>
                      <br/><br/>".$event_title."</td>\n";
                      unset($event_title);

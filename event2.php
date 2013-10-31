@@ -25,13 +25,13 @@ $query2 = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i 
 $getEvent_res = queryMysql($query2);
 
 if (mysql_num_rows($getEvent_res) > 0) {
-        $event_txt = "<ul>";
+        $event_txt = "<ul style='list-style-type: none;'>";
         while ($ev = @mysql_fetch_array($getEvent_res)) {
                 $event_title = stripslashes($ev['event_title']);
                 $event_shortdesc = stripslashes($ev['event_shortdesc']);
                 $fmt_date = $ev['fmt_date'];
 
-                $event_txt .= "<li><strong>".$fmt_date."</strong>: ".$event_title."<br/>".$event_shortdesc."</li>";
+                $event_txt .= "<li><strong>".$fmt_date."</strong>: ".$event_title." - ".$event_shortdesc."</li>";
         }
         $event_txt .= "</ul>";
         mysql_free_result($getEvent_res);
