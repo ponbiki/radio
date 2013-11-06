@@ -18,6 +18,14 @@ if (!$loggedin) header("Location: schedule.php");
 
     </head>
 <body>
+    <p>
+        All scheduled times are GMT/UTC<br />
+        Your current local time and offset is:<br />
+        <script>
+            var date = new Date();
+            document.write(date);
+        </script>
+    </p>
 <h1>Add Sets</h1>
 <?php
 if ($_POST['submit']) {

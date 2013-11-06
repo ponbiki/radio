@@ -16,6 +16,14 @@ include 'header.php';
 
     </head>
 <body>
+    <p>
+        All scheduled times are GMT/UTC<br />
+        Your current local time and offset is:<br />
+        <script>
+            var date = new Date();
+            document.write(date);
+        </script>
+    </p>
 <h1>Show Sets</h1>
 <?php
         $safe_m = sanitizeString($_GET['m']);

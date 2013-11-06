@@ -39,8 +39,16 @@ $firstDayArray = getdate($start);
         <?php echo $navigation; echo $logo; ?>
 
         <div class="replymode">
+
             <h2>Schedule</h2>
         </div>
+        <p>
+            All scheduled times are GMT/UTC.&nbsp;&nbsp;Your current local time and offset is:<br />
+            <script>
+                var date = new Date();
+                document.write(date);
+            </script>
+        </p>
         <form method="post" action="schedule.php">
             <select name="month">
                 <?php
