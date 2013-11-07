@@ -42,7 +42,7 @@ $firstDayArray = getdate($start);
 
             <h2>Schedule</h2>
         </div>
-        <p>
+        <p class="utc">
             All scheduled times are GMT/UTC.&nbsp;&nbsp;Your current local time and offset is:<br />
             <script>
                 var date = new Date();
