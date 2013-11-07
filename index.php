@@ -30,7 +30,7 @@ require 'codec.php';
 
         <script type="text/javascript">
             function eventWindow(url) {
-                event_popupWin = window.open(url, 'event',
+                event_popupWin = window.open(url, 'popout.php',
                     'resizable=no,scrollbar=no,toolbar=no,width=210,height=35');
                 event_popupWin.opener = self;
                 setTimeout("document.location.reload()",750);
