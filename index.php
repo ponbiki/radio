@@ -28,6 +28,15 @@ require 'codec.php';
             // ]]>
         </script>
 
+        <script type="text/javascript">
+            function eventWindow(url) {
+                event_popupWin = window.open(url, 'event',
+                    'resizable=no,scrollbar=no,toolbar=no,width=210,height=35');
+                event_popupWin.opener = self;
+                setTimeout("document.location.reload()",750);
+            }
+        </script>
+
     </head>
     <body>
 
@@ -86,6 +95,7 @@ require 'codec.php';
                 <param name="scale" value="noscale" />
                 <embed src="muses.swf" flashvars="url=http://radio.7chan.org:8000/radio&lang=auto&codec=<?php echo "$codec" ?>&volume=100&introurl=&tracking=true&jsevents=true&skin=compact/ffmp3-compact.xml&title=7chan%20Radio&welcome=Get%20krunk" width="191" scale="noscale" height="46" wmode="window" bgcolor="#EEF2FF" allowscriptaccess="always" type="application/x-shockwave-flash" />
                 </object>
+                <a href="javascript:eventWindow('popout.php');" title="Pop-out Player">p</a>
             </div>
             <div id="announcer" >
             </div>

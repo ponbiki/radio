@@ -30,7 +30,7 @@ $firstDayArray = getdate($start);
         <script type="text/javascript">
             function eventWindow(url) {
                 event_popupWin = window.open(url, 'event',
-                    'resizable=yes,scrollbar=yes,toolbar=no,width=400,height=600');
+                    'resizable=yes,scrollbar=yes,toolbar=no,width=400,height=900');
                 event_popupWin.opener = self;
             }
         </script>
