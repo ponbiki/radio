@@ -18,7 +18,7 @@ if (!$loggedin) header("Location: schedule.php");
 
     </head>
 <body>
-    <p>
+    <p class="utc">
         All scheduled times are GMT/UTC<br />
         Your current local time and offset is:<br />
         <script>

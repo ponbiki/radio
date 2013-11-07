@@ -48,7 +48,14 @@ require 'codec.php';
 
         </div>
         <div class="daily">
-
+            <p class="utc">
+                All scheduled times are GMT/UTC<br />
+                Your current local time and offset is:<br />
+                <script>
+                    var date = new Date();
+                    document.write(date);
+                </script>
+            </p>
             <?php
             $nowArray = getdate();
             $month = $nowArray['mon'];
