@@ -102,7 +102,7 @@ require 'codec.php';
                 <param name="scale" value="noscale" />
                 <embed src="muses.swf" flashvars="url=http://radio.7chan.org:8000/radio&lang=auto&codec=<?php echo "$codec" ?>&volume=100&introurl=&tracking=true&jsevents=true&skin=compact/ffmp3-compact.xml&title=7chan%20Radio&welcome=Get%20krunk" width="191" scale="noscale" height="46" wmode="window" bgcolor="#EEF2FF" allowscriptaccess="always" type="application/x-shockwave-flash" />
                 </object>
-                <a href="javascript:eventWindow('popout.php');" title="Pop-out Player">p</a>
+                <a href="javascript:eventWindow('popout.php');" title="Pop-out Player"><img src="img/pop.png"></a>
             </div>
             <div id="announcer" >
             </div>
