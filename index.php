@@ -64,7 +64,7 @@ require 'codec.php';
             $day = $nowArray['mday'];
             echo "<h2>". $day ." ". $monthText ." ". $year ."</h2>";
 
-            $query = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date FROM calendar_events
+            $query = "SELECT event_title, event_shortdesc, date_format(event_start, '%l:%i %p') as fmt_date, date_format(event_end, '%l:%i %p') as emt_date FROM calendar_events
                 WHERE month(event_start) ='".$month."' AND dayofmonth(event_start) ='".$day."' AND year(event_start) = '".$year."'
                 ORDER BY event_start";
             $chkEvent_res = queryMysql($query);
@@ -74,7 +74,8 @@ require 'codec.php';
                     $event_title = stripslashes($ev['event_title']);
                     $event_shortdesc = stripslashes($ev['event_shortdesc']);
                     $fmt_date = $ev['fmt_date'];
-                    $event_txt .="<li><strong>". $fmt_date ."</strong>: ". $event_title ."<br />".
+                    $emt_date = $ev['emt_date'];
+                    $event_txt .="<li><strong>". $fmt_date ."</strong> to <strong>". $emt_date ."</strong>: ". $event_title ."<br />".
                             $event_shortdesc ."</li>";
                 }
                 $event_txt .= "</ul>";
