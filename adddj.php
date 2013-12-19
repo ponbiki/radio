@@ -4,32 +4,21 @@ require 'header.php';
 if (!$loggedin) header("Location: index.php");
 
 if (!$admin) header("Location: djpanel.php");
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>Add DJ</title>
+$page = "Add DJ";
 
-        <meta name="robots" content="noindex, nofollow" />
-
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-
-        <script src="yahoo-min.js"></script>
-        <script src="event-min.js"></script>
-        <script src="connection-min.js"></script>
-
-        <script>
+htmlheader($page, $page, array(
+    "<script src=\"yahoo-min.js\"></script>",
+    "<script src=\"event-min.js\"></script>",
+    "<script src=\"connection-min.js\"></script>",
+    "<script>
             function checkUser(user) {
                 if (user.value == '') {
                     document.getElementById('info').innerHTML = ''
                     return
                 }
 
-                params = "user=" + user.value
+                params = \"user=\" + user.value
                 callback = { success:successHandler, failure:failureHandler }
                 request = YAHOO.util.Connect.asyncRequest('POST',
                     'checkuser.php', callback, params);
@@ -41,14 +30,14 @@ if (!$admin) header("Location: djpanel.php");
 
             function failureHandler(o) {
                 document.getElementById('info').innerHTML =
-                    o.status + " " + o.statusText;
+                    o.status + \" \" + o.statusText;
             }
-        </script>
-    </head>
-    <body>
-        <?php echo $navigation; echo $logo; ?>
+        </script>"));
 
-        <?php
+echo $navigation; echo $logo;
+
+bar($page);
+
         $error = $user = $pass = $admin = "";
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
@@ -76,10 +65,11 @@ if (!$admin) header("Location: djpanel.php");
                     }
                 }
             }
-        ?>
-        <div class="replymode">
-            <h2>Add DJ</h2>
-        </div>
+
+
+
+?>
+
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <form method='post' action='adddj.php'><?php echo $error; ?>
             <table style="float: left;">

@@ -1,27 +1,17 @@
 <?php
 require 'header.php';
+
+$page = "DJ Lineup";
+
+htmlheader($page, $page, array());
+
+echo $navigation; echo $logo;
+
+bar($page);
+
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>DJ Lineup</title>
-
-        <meta name="robots" content="noindex, nofollow" />
-
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-    </head>
-    <body>
-        <?php echo $navigation; echo $logo; ?>
-
-
-        <div class="replymode">
-            <h2>DJ Lineup</h2>
-        </div>
-        <ul style="list-style-type: none;">
+    <ul style="list-style-type: none;">
             <?php
             $query = "SELECT * FROM djs";
             $result = mysql_query($query);

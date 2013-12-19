@@ -4,25 +4,15 @@ require 'header.php';
 if (!$loggedin) header("Location: index.php");
 
 if (!$admin) header("Location: djpanel.php");
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>Remove DJ</title>
+$page = "Remove DJ";
 
-        <meta name="robots" content="noindex, nofollow" />
+htmlheader($page, $page, array());
 
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
+echo $navigation; echo $logo;
 
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
+bar($page);
 
-    </head>
-    <body>
-        <?php echo $navigation; echo $logo; ?>
-
-        <?php
         $error = $user = $pass = "";
 
         $query1 = "SELECT * FROM djs";
@@ -44,9 +34,7 @@ if (!$admin) header("Location: djpanel.php");
         }
 
         ?>
-        <div class="replymode">
-            <h2>Remove DJ</h2>
-        </div>
+
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <form method='post' action='removedj.php'><?php echo $error; ?>
             <table style="float: left;">

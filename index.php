@@ -2,45 +2,31 @@
 require 'header.php';
 
 require 'codec.php';
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>7chan Radio</title>
+$page = "7chan Radio";
 
-        <meta name="robots" content="noindex, nofollow" />
-
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-        <script type="text/javascript">// <![CDATA[
+htmlheader($page, $page, array(
+    "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>",
+    "<script type=\"text/javascript\">// <![CDATA[
             $(document).ready(function() {
-                $.ajaxSetup({cache: false}); // This part addresses an IE bug. without it, IE will only load the first number and will never refresh
+                $.ajaxSetup({cache: false});
                 setInterval(function() {
                     $('#announcer').load('announce.php');
-                }, 3000); // the "3000" here refers to the time to refresh the div. it is in milliseconds.
+                }, 3000);
             });
             // ]]>
-        </script>
-
-        <script type="text/javascript">
+        </script>",
+    "<script type=\"text/javascript\">
             function eventWindow(url) {
                 event_popupWin = window.open(url, 'popout.php',
                     'resizable=no,scrollbar=no,toolbar=no,width=210,height=35');
                 event_popupWin.opener = self;
-                setTimeout("document.location.reload()",750);
+                setTimeout(\"document.location.reload()\",750);
             }
-        </script>
+        </script>"));
 
-    </head>
-    <body>
-
-        <?php echo $navigation; echo $logo; ?>
+echo $navigation; echo $logo;
+?>
 
         <div class="pic">
 

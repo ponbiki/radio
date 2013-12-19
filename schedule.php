@@ -1,6 +1,21 @@
 <?php
 include "header.php";
 
+$page = "Schedule";
+
+htmlheader($page, $page, array(
+    "<script type=\"text/javascript\">
+            function eventWindow(url) {
+                event_popupWin = window.open(url, 'event',
+                    'resizable=yes,scrollbar=yes,toolbar=no,width=400,height=900');
+                event_popupWin.opener = self;
+            }
+        </script>"));
+
+echo $navigation; echo $logo;
+
+bar($page);
+
 define("ADAY", (60*60*24));
 if ((!isset($_POST['month'])) || (!isset($_POST['year']))) {
         $nowArray = getdate();
@@ -14,34 +29,6 @@ if ((!isset($_POST['month'])) || (!isset($_POST['year']))) {
 $start = mktime (12, 0, 0, $month, 1, $year);
 $firstDayArray = getdate($start);
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
-
-        <title>Schedule</title>
-
-        <meta name="robots" content="noindex, nofollow" />
-
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-
-        <script type="text/javascript">
-            function eventWindow(url) {
-                event_popupWin = window.open(url, 'event',
-                    'resizable=yes,scrollbar=yes,toolbar=no,width=400,height=900');
-                event_popupWin.opener = self;
-            }
-        </script>
-    </head>
-    <body>
-        <?php echo $navigation; echo $logo; ?>
-
-        <div class="replymode">
-
-            <h2>Schedule</h2>
-        </div>
         <p class="utc">
             All scheduled times are GMT/UTC.&nbsp;&nbsp;Your current local time and offset is:<br />
             <script>

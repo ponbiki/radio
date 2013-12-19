@@ -2,22 +2,12 @@
 include 'header.php';
 global $djname;
 if (!$loggedin) header("Location: schedule.php");
+
+$page = "Add Set";
+
+htmlheader($page, $page, array());
+
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
-
-        <title>Add Set</title>
-
-        <meta name="robots" content="noindex, nofollow" />
-
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-
-    </head>
-<body>
     <p class="utc">
         All scheduled times are GMT/UTC<br />
         Your current local time and offset is:<br />

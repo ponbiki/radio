@@ -1,26 +1,14 @@
 <?php
 require 'header.php';
 
+$page = "Change Password";
+
 if (!$loggedin) header("Location: index.php");
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>Change Password</title>
+htmlheader($page, $page, array());
 
-        <meta name="robots" content="noindex, nofollow" />
+echo $navigation; echo $logo;
 
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
-
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-
-    </head>
-    <body>
-        <?php echo $navigation; echo $logo; ?>
-
-        <?php
         $error = $pass2 = $pass1 = "";
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
@@ -38,11 +26,10 @@ if (!$loggedin) header("Location: index.php");
                 die("<h4>Password for $djname changed</h4><br />Return to <a href='djpanel.php' title='DJ Panel'>DJ Panel</a>");
                 }
         }
-        ?>
 
-        <div class="replymode">
-            <h2>Change Password</h2>
-        </div>
+        bar($page);
+
+?>
         <p><span id="welcome">Welcome, <?php echo $djname; ?>.</span></p>
         <p>Please input your new password twice</p>
         <form method='post' action='changepwd.php'><?php echo $error; ?>

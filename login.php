@@ -2,28 +2,18 @@
 require 'header.php';
 
 if ($loggedin) header("Location: djpanel.php");
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html" charset=UTF-8">
 
-        <title>Log In</title>
+$page = "DJ Log In";
 
-        <meta name="robots" content="noindex, nofollow" />
+htmlheader($page, $page, array());
 
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon" />
+echo $navigation; echo $logo;
 
-        <link rel="stylesheet" href="css/burichan.css" type="text/css" />
-    </head>
-    <body>
-        <?php echo $navigation; echo $logo; ?>
+bar($page);
 
-        <?php
         $salt1 = "qm&h*";
         $salt2 = "pg!@";
 
-        echo "<div class='replymode'><h2>DJ Log In</h2></div>";
         $error = $user = $pass = '';
 
         if (isset($_POST['user'])) {
