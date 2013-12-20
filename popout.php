@@ -17,5 +17,4 @@ htmlheader($page, $page, array());
         <param name="scale" value="noscale" />
         <embed src="muses.swf" flashvars="url=http://radio.7chan.org:8000/radio&lang=auto&codec=<?php echo "$codec" ?>&volume=100&autoplay=true&introurl=&tracking=true&jsevents=true&skin=compact/ffmp3-compact.xml&title=7chan%20Radio&welcome=Get%20krunk" width="191" scale="noscale" height="46" wmode="window" bgcolor="#EEF2FF" allowscriptaccess="always" type="application/x-shockwave-flash" />
         </object>
-    </body>
-</html>
+<?php tail(); ?>

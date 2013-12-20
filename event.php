@@ -123,6 +123,5 @@ echo <<<END_OF_TEXT
 <button type="submit" name="submit" value="submit">Add Set</button>
 </form>
 END_OF_TEXT;
+tail();
 ?>
-</body>
-</html>

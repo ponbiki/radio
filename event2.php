@@ -44,6 +44,5 @@ if ($event_txt != "") {
         $event_txt
         <hr/>";
 }
+tail();
 ?>
-</body>
-</html>

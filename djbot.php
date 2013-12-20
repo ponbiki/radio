@@ -9,6 +9,5 @@ echo $navigation; echo $logo;
 
 bar($page);
 
+tail();
 ?>
-    </body>
-</html>

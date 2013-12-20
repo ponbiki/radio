@@ -42,5 +42,4 @@ bar($page);
             }
             ?>
         </ul>
-    </body>
-</html>
+<?php tail(); ?>

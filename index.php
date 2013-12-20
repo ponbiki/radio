@@ -97,5 +97,4 @@ echo $navigation; echo $logo;
         <div id="footer">
             <p>If you prefer to use your own player, tune in at <a href="http://radio.7chan.org:8000/radio.m3u">http://radio.7chan.org:8000/radio.m3u</a><p>
         </div>
-    </body>
-</html>
+<?php tail(); ?>

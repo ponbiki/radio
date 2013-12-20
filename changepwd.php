@@ -59,5 +59,4 @@ echo $navigation; echo $logo;
             }
             ?>
         </table>
-    </body>
-</html>
+<?php tail(); ?>

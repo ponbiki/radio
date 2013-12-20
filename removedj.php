@@ -67,5 +67,4 @@ bar($page);
             }
             ?>
         </table>
-    </body>
-</html>
+<?php tail(); ?>

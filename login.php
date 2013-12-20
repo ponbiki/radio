@@ -53,6 +53,4 @@ bar($page);
             </tr>
             </table>
         </form>
-
-    </body>
-</html>
+<?php tail(); ?>

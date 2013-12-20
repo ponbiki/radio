@@ -53,6 +53,14 @@ function bar($page) {
 _END;
 }
 
+function tail() {
+    echo <<<_END
+   </body>
+</html>
+
+_END;
+}
+
 if ($loggedin)
     $navigation = "<div class='navbar'>
                 [<a href='index.php' title='7chan Radio'>7chan Radio</a> / <a href='schedule.php' title='Schedule'>Schedule</a> / <a href='djs.php' title='DJ Lineup'>DJ Lineup</a>]

@@ -109,6 +109,5 @@ $firstDayArray = getdate($start);
             }
         }
         echo "</tr></table>";
-        ?>
-    </body>
-</html>
+    tail();
+?>
