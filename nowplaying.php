@@ -17,10 +17,10 @@ function findRadio($arr) {
 }
 
 function findCodec($arr) {
-    
+
     global $rad;
-       
-    if (($arr['mountpoint'][$rad]['streamurl'] == 'MP3') || ($arr['mountpoint']['streamurl'] == 'MP3')) {
+
+    if (($arr['mountpoint'][$rad]['streamurl'] == 'MP3') || ($arr['mountpoint'][$rad]['streamurl'] == 'mp3') || ($arr['mountpoint']['streamurl'] == 'MP3') || ($arr['mountpoint']['streamurl'] == 'mp3')) {
         $j = 'mp3';
     } else {
         $j = 'ogg';

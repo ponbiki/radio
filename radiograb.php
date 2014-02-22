@@ -9,10 +9,12 @@ if (!$fp) {
     fwrite($fp, $out);
     while (!feof($fp)) {
         $result = (fgets($fp, 128));
-        $cleaned = strip_tags($result);
-        /*$cleaned2 = var_dump($cleaned);*/
-        echo "<pre>" . $cleaned . "</pre>";
+        $out .= $result. "\n";
     }
     fclose($fp);
 }
+$cleaned = strip_tags($out);
+$stripped = preg_replace("/\s+/", " ", $cleaned);
+$split = explode(" ", $stripped);
+echo "<pre>";print_r($split);echo "</pre>";
 ?>
