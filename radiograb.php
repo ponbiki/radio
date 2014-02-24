@@ -16,5 +16,12 @@ if (!$fp) {
 $cleaned = strip_tags($out);
 $stripped = preg_replace("/\s+/", " ", $cleaned);
 $split = explode(" ", $stripped);
-echo "<pre>";print_r($split);echo "</pre>";
+if (in_array('/radio', $split)) {
+    while (current($split) != '/radio') {
+        next($split);
+        $radio_key = key($split);
+        $stream_type = $split[$radio_key + 11];
+    }
+}
+echo $stream_type;
 ?>
