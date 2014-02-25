@@ -19,9 +19,13 @@ $split = explode(" ", $stripped);
 if (in_array('/radio', $split)) {
     while (current($split) != '/radio') {
         next($split);
-        $radio_key = key($split);
-        $stream_type = $split[$radio_key + 11];
+        $rad_key = key($split);
+    }
+    $rad_array = array_slice($split, $rad_key);
+    while (current($rad_array) != 'Type:') {
+        next($rad_array);
+        $type_key = (key($rad_array)+1);
     }
 }
-echo $stream_type;
+echo $rad_array[$type_key];
 ?>
