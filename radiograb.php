@@ -27,5 +27,5 @@ if (in_array('/radio', $split)) {
         $type_key = (key($rad_array)+1);
     }
 }
-echo $rad_array[$type_key];
+$rad_cod = $rad_array[$type_key];
 ?>

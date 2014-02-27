@@ -19,5 +19,11 @@ if (in_array('Mount Point /radio', $data)) {
         $type_key = (key($rad_array)+1);
     }
 }
-echo $rad_array[$type_key];
+$rad_test = $rad_array[$type_key];
+
+if ($rad_test == 'audio/mpeg') {
+    $rad_cod = "mp3";
+} else {
+    $rad_cod = "ogg";
+}
 ?>
