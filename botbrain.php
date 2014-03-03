@@ -9,7 +9,7 @@ $port = 6667; // port usually 6667 or 6697 for ssl
 $botnick = 'd[^_^]b'; // irc nick
 $botname = 'djbot'; //irc ident field
 $realname = 'Tiesto'; //irc ident field
-$nspass = 'P455w0rd1!'; //nickserv pass
+$nspass = 'P455w0rD1!'; //nickserv pass
 $ownerid = 'ponbiki!asdf@I.is.confused'; // owner 
 $channel = '#BitchBot';  // initial join channel
 $switch = 1; //force true value used for infinite loop
@@ -31,7 +31,7 @@ if(!result) {
 }
 //$rows = mysql_num_rows($result);
 while($djlist[] = mysql_fetch_array($result, MYSQL_NUM));
-echo "<pre>";print_r($djlist);echo "</pre>";
+//echo "<pre>";print_r($djlist);echo "</pre>";
 mysql_free_result($result);
 mysql_close($db_server);
 
@@ -60,6 +60,7 @@ while($switch) {
         flush();
         //seperate the datas
         $ex = explode(' ', $data);
+        //echo preg_replace('/(:)(.*)(!+)/','${2}',$ex[0]);
         //pingpong
         if($ex[0] == "PING") {
             fputs($socket, "PONG ". $ex[1]."\n");
@@ -72,7 +73,8 @@ while($switch) {
 		if ($ex[1] == "INVITE" && $ex[2] == $botnick) fputs($socket,"JOIN ".trim($ex[3], ":")."\n");
 		
 		// allows universally accessible commands
-		if ($ex[0] != ":".$ownerid || $ex[0] == ":".$ownerid) {
+                //$nick = preg_replace(':','',$ex[0]);
+		if (in_array(preg_replace('/(:)(.*)(!+)/','${2}',$ex[0]), $djlist)) {
 			switch($command) {
 				case ":;ping":   exec("ping -c 3 ".trim($ex[4]), $output);
 					foreach($output as $msg) {
@@ -84,12 +86,9 @@ while($switch) {
 					fputs($socket,"PRIVMSG ".$ex[2]." :Get bent ".$match[1]."\n");
 				break;
                                 case ":;on":    preg_match("/^:([^!]+)!/",$ex[0],$match);
-                                    if(in_array($match[1], $djlist)) {
                                         fputs($socket,"PRIVMSG ".$ex[2]." :".$match[1]." is now streaming on 7chan Radio.\n");
                                         $nowdj = $match[1];
-                                    } else {
-                                        echo "You aren't a DJ";
-                                    }
+
                                 break;
                                 case ":;off":    preg_match("/^:([^!]+)!/",$ex[0],$match);
                                         fputs($socket,"PRIVMSG ".$ex[2]." :7chan Radio is now off the air.\n");
