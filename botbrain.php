@@ -22,18 +22,19 @@ if(!db_server) {
     echo "ok1";
 }
 mysql_select_db($dbname) or die(mysql_error());
-$query = 'SELECT usernames FROM djs';
+$query = 'SELECT username FROM djs';
 $result = mysql_query($query);
 if(!result) {
     die(mysql_error());
 } else {
     echo "ok2";
 }
+//$rows = mysql_num_rows($result);
+while($djlist[] = mysql_fetch_array($result, MYSQL_NUM));
+echo "<pre>";print_r($djlist);echo "</pre>";
+mysql_free_result($result);
 mysql_close($db_server);
-$rows = mysql_num_rows($result);
-$djlist = mysql_result($result);
-echo $rows;
-/*
+
 //force unlimited time to run
 set_time_limit(0);
 
@@ -83,8 +84,12 @@ while($switch) {
 					fputs($socket,"PRIVMSG ".$ex[2]." :Get bent ".$match[1]."\n");
 				break;
                                 case ":;on":    preg_match("/^:([^!]+)!/",$ex[0],$match);
+                                    if(in_array($match[1], $djlist[])) {
                                         fputs($socket,"PRIVMSG ".$ex[2]." :".$match[1]." is now streaming on 7chan Radio.\n");
                                         $nowdj = $match[1];
+                                    } else {
+                                        echo "You aren't a DJ";
+                                    }
                                 break;
                                 case ":;off":    preg_match("/^:([^!]+)!/",$ex[0],$match);
                                         fputs($socket,"PRIVMSG ".$ex[2]." :7chan Radio is now off the air.\n");
@@ -146,5 +151,5 @@ function objectsIntoArray($arrObjData, $arrSkipIndices = array()) {
 		}
 	}
 	return $arrData;
-} */
+}
 ?>
