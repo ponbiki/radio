@@ -16,7 +16,7 @@ $switch = 1; //force true value used for infinite loop
 $nowdj = ''; //currently streaming DJ
 
 $dbserver = mysql_connect($dbhost, $dbuser, $dbpass);
-if(!db_server) {
+if(!dbserver) {
     die(mysqlerror());
 } else {
     echo "ok1";
@@ -84,7 +84,7 @@ while($switch) {
 					fputs($socket,"PRIVMSG ".$ex[2]." :Get bent ".$match[1]."\n");
 				break;
                                 case ":;on":    preg_match("/^:([^!]+)!/",$ex[0],$match);
-                                    if(in_array($match[1], $djlist[])) {
+                                    if(in_array($match[1], $djlist)) {
                                         fputs($socket,"PRIVMSG ".$ex[2]." :".$match[1]." is now streaming on 7chan Radio.\n");
                                         $nowdj = $match[1];
                                     } else {
