@@ -1,5 +1,3 @@
-<!-- #!/usr/bin/php -q -->
-
 <?php
 
 require_once 'functions.php';
@@ -11,7 +9,7 @@ $botname = 'djbot'; //irc ident field
 $realname = 'Tiesto'; //irc ident field
 $nspass = 'P455w0rD1!'; //nickserv pass
 $ownerid = 'ponbiki!asdf@I.is.confused'; // owner 
-$channel = '#BitchBot';  // initial join channel
+$channel = '#radio';  // initial join channel
 $switch = 1; //force true value used for infinite loop
 $nowdj = ''; //currently streaming DJ
 
