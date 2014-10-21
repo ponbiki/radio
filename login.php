@@ -45,9 +45,11 @@ bar($page);
         <form method='post' action='login.php'><?php echo $error ?>
             <table style="float: left;">
                 <tr>
-                    <td style="text-align: left;">Username</td><td style="text-align: right;"><input type='text' maxlength='24' name='user' value="<?php echo $user ?>" /></td>
+                    <td style="text-align: left;">Username</td><td style="text-align: right;">
+                        <input type='text' maxlength='24' name='user' value="<?php echo $user; ?>" /></td>
                 </tr><tr>
-                    <td style="text-align: left;">Password</td><td style="text-align: right;"><input type='password' maxlength='24' name='pass' value="<?php echo $pass ?>" /></td>
+                    <td style="text-align: left;">Password</td><td style="text-align: right;">
+                        <input type='password' maxlength='24' name='pass' value="<?php echo $pass; ?>" /></td>
                 </tr><tr>
                     <td></td><td style="text-align: right;"><input type="submit" value="Login" /></td>
             </tr>
