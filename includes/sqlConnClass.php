@@ -2,9 +2,9 @@
 
 class sqlConnClass {
     private $dbhost = 'localhost';
-    private $dbuser = 'cbdb-rw';
-    private $dbpass = 'K&n5wj!kj3X';
-    private $dbname = 'cpdb';
+    private $dbuser = '';
+    private $dbpass = '';
+    private $dbname = '';
     protected $dbconn;
     
     protected function __construct() {
